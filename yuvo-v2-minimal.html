@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuvo Naturals - Vitality in Every Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  /* ========================================
+     CSS VARIABLES & RESET
+     ======================================== */
+  :root {
+    --peach: #f8ab7e;
+    --peach-light: #fcd4b8;
+    --peach-dark: #e8935e;
+    --mauve: #ae77a4;
+    --mauve-light: #cb8dc1;
+    --mauve-dark: #8a5c82;
+    --slate-dark: #1e293b;
+    --slate-medium: #334155;
+    --slate-light: #64748b;
+    --bg-light: #F0F5FA;
+    --bg-warm: #FFF8F4;
+    --white: #FFFFFF;
+    --border: #D1D5DB;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--slate-medium);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--peach);
+    color: var(--white);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* ========================================
+     NAVIGATION
+     ======================================== */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s var(--ease-out-expo);
+    mix-blend-mode: normal;
+  }
+
+  .nav.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1rem 3rem;
+    border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--slate-dark);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--peach);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--slate-medium);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--peach);
+    transition: width 0.4s var(--ease-out-expo);
+  }
+
+  .nav-links a:hover {
+    color: var(--slate-dark);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    font-family: var(--font-body) !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    background: var(--slate-dark);
+    color: var(--white) !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 100px;
+    transition: all 0.4s var(--ease-out-expo) !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--peach) !important;
+    transform: translateY(-1px);
+  }
+
+  .nav-cta::after {
+    display: none !important;
+  }
+
+  /* ========================================
+     HERO SECTION
+     ======================================== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(248, 171, 126, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(174, 119, 164, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+  }
+
+  .hero-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s var(--ease-out-expo) 0.3s forwards;
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(3.5rem, 10vw, 8.5rem);
+    color: var(--slate-dark);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .hero-headline .word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    margin-right: 0.15em;
+  }
+
+  .hero-headline .word-inner {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: wordReveal 1s var(--ease-out-expo) forwards;
+  }
+
+  .hero-headline .word:nth-child(1) .word-inner { animation-delay: 0.5s; }
+  .hero-headline .word:nth-child(2) .word-inner { animation-delay: 0.6s; }
+  .hero-headline .word:nth-child(3) .word-inner { animation-delay: 0.7s; }
+  .hero-headline .word:nth-child(4) .word-inner { animation-delay: 0.8s; }
+
+  .hero-headline .accent {
+    color: var(--peach);
+    position: relative;
+  }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+    color: var(--slate-light);
+    max-width: 540px;
+    line-height: 1.7;
+    margin: 0 auto 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.2s forwards;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+  }
+
+  /* Hero image showcase - three floating images below the headline */
+  .hero-image-showcase {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 1.5rem;
+    align-items: end;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1.2s var(--ease-out-expo) 1.6s forwards;
+  }
+
+  .hero-img-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(30, 41, 59, 0.08);
+  }
+
+  .hero-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out-expo);
+  }
+
+  .hero-img-wrap:hover img {
+    transform: scale(1.04);
+  }
+
+  .hero-img-side {
+    height: 320px;
+  }
+
+  .hero-img-center {
+    height: 400px;
+  }
+
+  .hero-img-film-border {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Subtle film grain overlay on hero images */
+  .hero-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 2s forwards;
+    z-index: 3;
+  }
+
+  .hero-scroll span {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate-light);
+    font-weight: 500;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--peach);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  .btn-primary {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: var(--peach);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s var(--ease-out-expo);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--peach-dark);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease-out-expo);
+    border-radius: inherit;
+  }
+
+  .btn-primary:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .btn-primary span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(248, 171, 126, 0.35);
+  }
+
+  .btn-secondary {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--slate-medium);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    transition: all 0.4s var(--ease-out-expo);
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--mauve);
+    color: var(--mauve);
+    transform: translateY(-2px);
+  }
+
+  /* ========================================
+     BRAND STORY SECTION
+     ======================================== */
+  .story {
+    padding: 10rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .story-text {
+    position: relative;
+  }
+
+  .story-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 2rem;
+  }
+
+  .story-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--slate-dark);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+  }
+
+  .story-title .highlight {
+    color: var(--peach);
+    position: relative;
+  }
+
+  .story-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .story-body p {
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: var(--slate-medium);
+    font-weight: 300;
+  }
+
+  .story-image-col {
+    position: relative;
+  }
+
+  .story-image-main {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(30, 41, 59, 0.1);
+    position: relative;
+  }
+
+  .story-image-main img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    transition: transform 1.5s var(--ease-out-expo);
+  }
+
+  .story-image-main:hover img {
+    transform: scale(1.03);
+  }
+
+  .story-image-accent {
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 4px solid var(--white);
+    box-shadow: 0 15px 40px rgba(30, 41, 59, 0.12);
+    z-index: 2;
+  }
+
+  .story-image-accent img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .story-decoration {
+    position: absolute;
+    top: -80px;
+    right: -200px;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(248, 171, 126, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .story-decoration::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid rgba(174, 119, 164, 0.1);
+    border-radius: 50%;
+  }
+
+  /* ========================================
+     VIDEO HERO BANNER (between story and products)
+     ======================================== */
+  .video-banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: var(--slate-dark);
+  }
+
+  .video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .video-placeholder-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .video-placeholder-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+  }
+
+  .video-placeholder-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(30, 41, 59, 0.4) 100%);
+    z-index: 1;
+  }
+
+  .video-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s var(--ease-out-expo);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1.5rem;
+  }
+
+  .video-play-btn:hover {
+    background: var(--peach);
+    border-color: var(--peach);
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(248, 171, 126, 0.4);
+  }
+
+  .video-play-btn svg {
+    fill: var(--white);
+    margin-left: 4px;
+  }
+
+  .video-placeholder-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.75rem;
+  }
+
+  .video-placeholder-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--white);
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-placeholder-note {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+    font-style: italic;
+  }
+
+  /* ========================================
+     PRODUCT SHOWCASE
+     ======================================== */
+  .products {
+    padding: 8rem 0;
+    background: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .products-header {
+    text-align: center;
+    padding: 0 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .products-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 1.5rem;
+  }
+
+  .products-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--slate-dark);
+    letter-spacing: -0.03em;
+  }
+
+  .products-track {
+    display: flex;
+    gap: 2rem;
+    padding: 0 max(2rem, calc((100vw - 1200px) / 2));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+  }
+
+  .products-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .products-track:active {
+    cursor: grabbing;
+  }
+
+  .product-card {
+    flex: 0 0 380px;
+    scroll-snap-align: center;
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.6s var(--ease-out-expo);
+    position: relative;
+    border: 1px solid rgba(209, 213, 219, 0.5);
+  }
+
+  .product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 80px rgba(30, 41, 59, 0.08);
+    border-color: transparent;
+  }
+
+  .product-visual {
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out-expo);
+  }
+
+  .product-card:hover .product-visual img {
+    transform: scale(1.06);
+  }
+
+  .product-botanical {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+
+  .product-card:nth-child(1) .product-botanical { color: var(--mauve); }
+  .product-card:nth-child(2) .product-botanical { color: #D97706; }
+  .product-card:nth-child(3) .product-botanical { color: #DB2777; }
+
+  .product-info {
+    padding: 2rem 2rem 2.5rem;
+  }
+
+  .product-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--slate-dark);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-blend {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--peach-dark);
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .product-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--slate-light);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-cta {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--slate-dark);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: all 0.4s var(--ease-out-expo);
+  }
+
+  .product-cta .arrow {
+    display: inline-block;
+    transition: transform 0.4s var(--ease-out-expo);
+    font-size: 1.1rem;
+  }
+
+  .product-cta:hover {
+    color: var(--peach);
+  }
+
+  .product-cta:hover .arrow {
+    transform: translateX(6px);
+  }
+
+  .products-drag-hint {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.75rem;
+    color: var(--slate-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.6;
+  }
+
+  /* ========================================
+     VALUES / FEATURES
+     ======================================== */
+  .values {
+    padding: 10rem 2rem;
+    position: relative;
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  .values-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .values-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .values-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 1.5rem;
+  }
+
+  .values-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--slate-dark);
+    letter-spacing: -0.03em;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .value-card {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(209, 213, 219, 0.4);
+    transition: all 0.6s var(--ease-out-expo);
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .value-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-light) 100%);
+    opacity: 0;
+    transition: opacity 0.6s var(--ease-out-expo);
+  }
+
+  .value-card:hover::before {
+    opacity: 1;
+  }
+
+  .value-card:hover {
+    border-color: rgba(248, 171, 126, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(30, 41, 59, 0.06);
+  }
+
+  .value-icon {
+    position: relative;
+    z-index: 1;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s var(--ease-spring);
+    overflow: hidden;
+  }
+
+  .value-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .value-card:nth-child(1) .value-icon { background: rgba(248, 171, 126, 0.12); }
+  .value-card:nth-child(2) .value-icon { background: rgba(174, 119, 164, 0.12); }
+  .value-card:nth-child(3) .value-icon { background: rgba(34, 197, 94, 0.1); }
+  .value-card:nth-child(4) .value-icon { background: rgba(59, 130, 246, 0.1); }
+
+  .value-card:hover .value-icon {
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  .value-name {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--slate-dark);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .value-desc {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--slate-light);
+    line-height: 1.6;
+  }
+
+  /* Botanical accent image floating behind values */
+  .values-bg-accent {
+    position: absolute;
+    bottom: -60px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .values-bg-accent img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* ========================================
+     EDITORIAL / LIFESTYLE IMAGE STRIP
+     ======================================== */
+  .editorial-strip {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 4px;
+    background: var(--bg-light);
+    overflow: hidden;
+  }
+
+  .editorial-strip-item {
+    position: relative;
+    overflow: hidden;
+    height: 420px;
+  }
+
+  .editorial-strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s var(--ease-out-expo);
+  }
+
+  .editorial-strip-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .editorial-strip-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30, 41, 59, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .editorial-strip-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* ========================================
+     TESTIMONIALS
+     ======================================== */
+  .testimonials {
+    padding: 8rem 2rem;
+    background: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .testimonials-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .testimonials-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonials-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--slate-dark);
+    letter-spacing: -0.03em;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(209, 213, 219, 0.4);
+    position: relative;
+    transition: all 0.6s var(--ease-out-expo);
+    overflow: hidden;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(30, 41, 59, 0.06);
+    border-color: rgba(248, 171, 126, 0.25);
+  }
+
+  .testimonial-lifestyle-img {
+    width: 100%;
+    height: 160px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-lifestyle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out-expo);
+  }
+
+  .testimonial-card:hover .testimonial-lifestyle-img img {
+    transform: scale(1.04);
+  }
+
+  .testimonial-quote-mark {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--peach);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+  }
+
+  .testimonial-text {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--slate-medium);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--white);
+  }
+
+  .testimonial-card:nth-child(1) .testimonial-avatar {
+    background: linear-gradient(135deg, var(--mauve), var(--mauve-light));
+  }
+
+  .testimonial-card:nth-child(2) .testimonial-avatar {
+    background: linear-gradient(135deg, var(--peach), var(--peach-light));
+  }
+
+  .testimonial-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--slate-dark);
+  }
+
+  .testimonial-location {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--slate-light);
+  }
+
+  /* ========================================
+     CTA BANNER
+     ======================================== */
+  .cta-banner {
+    padding: 10rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--slate-dark);
+  }
+
+  .cta-banner-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .cta-banner-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+  }
+
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(248, 171, 126, 0.15) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .cta-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(174, 119, 164, 0.1) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-floating-img {
+    position: absolute;
+    right: max(2rem, calc((100vw - 1100px) / 2));
+    bottom: -60px;
+    width: 240px;
+    height: 360px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    opacity: 0.85;
+    transition: transform 1s var(--ease-out-expo);
+  }
+
+  .cta-floating-img:hover {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+
+  .cta-floating-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cta-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--white);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-title .peach {
+    color: var(--peach);
+  }
+
+  .cta-sub {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+
+  .cta-btn {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    background: var(--peach);
+    color: var(--white);
+    padding: 1.15rem 3rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.5s var(--ease-out-expo);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--peach-dark);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease-out-expo);
+    border-radius: inherit;
+  }
+
+  .cta-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .cta-btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(248, 171, 126, 0.4);
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    background: var(--slate-dark);
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand-name span {
+    color: var(--peach);
+  }
+
+  .footer-brand-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--peach);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.4s var(--ease-out-expo);
+  }
+
+  .footer-social a:hover {
+    border-color: var(--peach);
+    color: var(--peach);
+    transform: translateY(-2px);
+  }
+
+  .footer-acknowledgement {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.25);
+    line-height: 1.7;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    max-width: 700px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-legal a {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-legal a:hover {
+    color: var(--peach);
+  }
+
+  /* ========================================
+     SCROLL ANIMATIONS
+     ======================================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s var(--ease-out-expo);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.9s var(--ease-out-expo);
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 0.9s var(--ease-out-expo);
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.9s var(--ease-out-expo);
+  }
+
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .stagger-1 { transition-delay: 0.05s; }
+  .stagger-2 { transition-delay: 0.12s; }
+  .stagger-3 { transition-delay: 0.19s; }
+  .stagger-4 { transition-delay: 0.26s; }
+  .stagger-5 { transition-delay: 0.33s; }
+
+  /* ========================================
+     KEYFRAMES
+     ======================================== */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes wordReveal {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scrollPulse {
+    0% { top: -100%; }
+    50% { top: 100%; }
+    100% { top: 100%; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    20% { transform: translate(-15%, 5%); }
+    30% { transform: translate(7%, -25%); }
+    40% { transform: translate(-5%, 25%); }
+    50% { transform: translate(-15%, 10%); }
+    60% { transform: translate(15%, 0%); }
+    70% { transform: translate(0%, 15%); }
+    80% { transform: translate(3%, 35%); }
+    90% { transform: translate(-10%, 10%); }
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 1024px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .story-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .story-image-accent {
+      bottom: -20px;
+      left: -20px;
+      width: 150px;
+      height: 150px;
+    }
+
+    .hero-image-showcase {
+      gap: 1rem;
+    }
+
+    .hero-img-side {
+      height: 240px;
+    }
+
+    .hero-img-center {
+      height: 300px;
+    }
+
+    .editorial-strip {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .editorial-strip-item:last-child {
+      display: none;
+    }
+
+    .editorial-strip-item {
+      height: 320px;
+    }
+
+    .cta-floating-img {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .hero {
+      padding: 7rem 1.5rem 2rem;
+    }
+
+    .hero-image-showcase {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .hero-img-side {
+      display: none;
+    }
+
+    .hero-img-center {
+      height: 280px;
+    }
+
+    .story {
+      padding: 6rem 1.5rem;
+    }
+
+    .story-body {
+      gap: 1.5rem;
+    }
+
+    .story-image-main img {
+      height: 360px;
+    }
+
+    .story-image-accent {
+      width: 120px;
+      height: 120px;
+      bottom: -16px;
+      left: -16px;
+    }
+
+    .video-banner {
+      height: 350px;
+    }
+
+    .product-card {
+      flex: 0 0 calc(100vw - 4rem);
+    }
+
+    .values {
+      padding: 6rem 1.5rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .value-card {
+      padding: 2rem 1.5rem;
+      text-align: left;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 1.25rem;
+      row-gap: 0.25rem;
+    }
+
+    .value-icon {
+      grid-row: span 2;
+      margin: 0;
+      align-self: center;
+    }
+
+    .value-name {
+      align-self: end;
+    }
+
+    .value-desc {
+      align-self: start;
+    }
+
+    .editorial-strip {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+
+    .editorial-strip-item {
+      height: 260px;
+    }
+
+    .editorial-strip-item:last-child {
+      display: block;
+    }
+
+    .testimonials {
+      padding: 6rem 1.5rem;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonial-lifestyle-img {
+      height: 120px;
+    }
+
+    .cta-banner {
+      padding: 6rem 1.5rem;
+    }
+
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-ctas {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* ========================================
+     SMOOTH SCROLL PROGRESS BAR
+     ======================================== */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--peach), var(--mauve));
+    z-index: 10000;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: none;
+  }
+
+  /* ========================================
+     CURSOR DOT (desktop only)
+     ======================================== */
+  @media (hover: hover) {
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--peach);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999;
+      mix-blend-mode: difference;
+      transition: transform 0.15s ease;
+    }
+
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid rgba(248, 171, 126, 0.4);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99998;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+
+    .cursor-ring.hover {
+      width: 56px;
+      height: 56px;
+      border-color: var(--peach);
+      background: rgba(248, 171, 126, 0.06);
+    }
+  }
+
+  /* ========================================
+     IMAGE PLACEHOLDER (for missing assets)
+     ======================================== */
+  .img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-light) 100%);
+    border: 2px dashed rgba(174, 119, 164, 0.25);
+    border-radius: 16px;
+    padding: 2rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--mauve);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  .img-placeholder--dark {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.9) 100%);
+    border-color: rgba(248, 171, 126, 0.2);
+    color: rgba(255, 255, 255, 0.4);
+  }
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">yuvo<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#story">Story</a></li>
+    <li><a href="#products">Range</a></li>
+    <li><a href="#values">Values</a></li>
+    <li><a href="#stockists">Stockists</a></li>
+    <li><a href="#cta" class="nav-cta">Shop Now</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-label">Natural Sparkling Water - Melbourne, Australia</div>
+    <h1 class="hero-headline">
+      <span class="word"><span class="word-inner accent">Vitality</span></span>
+      <span class="word"><span class="word-inner">in</span></span>
+      <span class="word"><span class="word-inner">Every</span></span>
+      <span class="word"><span class="word-inner accent">Drop</span></span>
+    </h1>
+    <p class="hero-sub">Clean-label herbal sparkling water. No sugar. No preservatives. Made in Melbourne.</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn-primary"><span>Explore Our Range</span></a>
+      <a href="#stockists" class="btn-secondary">Find Yuvo Near You</a>
+    </div>
+  </div>
+
+  <!-- Hero image triptych -->
+  <div class="hero-image-showcase">
+    <div class="hero-img-wrap hero-img-side">
+      <img src="assets/dynamic/yuvo-asset-dynamic-04.png" alt="Yuvo bottle being uncapped with a wisp of refreshing mist rising from the neck" loading="eager">
+      <div class="hero-img-film-border"></div>
+    </div>
+    <div class="hero-img-wrap hero-img-center">
+      <img src="assets/product/yuvo-asset-product-01.png" alt="Three Yuvo Naturals bottles arranged on linen cloth surrounded by fresh botanicals" loading="eager">
+      <div class="hero-img-film-border"></div>
+    </div>
+    <div class="hero-img-wrap hero-img-side">
+      <img src="assets/dynamic/yuvo-asset-dynamic-01.png" alt="Yuvo sparkling water being poured into a crystal tumbler" loading="eager">
+      <div class="hero-img-film-border"></div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Brand Story -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-text">
+      <div class="story-decoration"></div>
+      <div class="story-label reveal">Our Story</div>
+      <h2 class="story-title reveal stagger-1">Nature, <span class="highlight">Refined</span></h2>
+      <div class="story-body">
+        <p class="reveal stagger-2">Born in Melbourne, Yuvo Naturals crafts sparkling hydration infused with purposeful herbal extracts. Every bottle is a clean-label promise - no sugar, no preservatives, no compromise. Just pure vitality from nature's finest botanicals.</p>
+        <p class="reveal stagger-3">We believe hydration should do more than quench. Each blend is designed to nourish, refresh, and restore - drawing on centuries of herbal wisdom, bottled for modern life.</p>
+      </div>
+    </div>
+    <div class="story-image-col reveal-right stagger-2">
+      <div class="story-image-main">
+        <img src="assets/emotion/yuvo-asset-emotion-01.png" alt="Warm morning light filtering through sheer linen curtains with a single wildflower - the quiet, natural spirit of Yuvo">
+      </div>
+      <div class="story-image-accent">
+        <img src="assets/closeup/yuvo-asset-closeup-03.png" alt="Fresh botanical ingredients arranged on natural linen cloth">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Banner -->
+<section class="video-banner reveal-scale">
+  <div class="video-placeholder-bg">
+    <img src="assets/dynamic/yuvo-asset-dynamic-02.png" alt="Yuvo bottle mid-tilt with suspended water droplets catching the light">
+  </div>
+  <div class="video-placeholder-overlay"></div>
+  <div class="video-placeholder">
+    <div class="video-play-btn" role="button" aria-label="Play brand video">
+      <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+    </div>
+    <div class="video-placeholder-label">Brand Film</div>
+    <div class="video-placeholder-title">The Making of Yuvo</div>
+    <div class="video-placeholder-note">VIDEO: 60-second brand film showing Melbourne botanicals being harvested at dawn, the blending and carbonation process in the Yuvo facility, and the first pour at a sunlit brunch - set to ambient acoustic guitar</div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="products">
+  <div class="products-header">
+    <div class="products-label reveal">The Range</div>
+    <h2 class="products-title reveal stagger-1">Three Blends. One Purpose.</h2>
+  </div>
+  <div class="products-track" id="productsTrack">
+    <div class="product-card reveal-scale stagger-1">
+      <div class="product-visual">
+        <img src="assets/product/yuvo-asset-product-04.png" alt="Yuvo Calm bottle resting on wet stone with eucalyptus sprigs - a serene, grounding composition">
+        <div class="product-botanical">Chamomile & Lavender</div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Yuvo Calm</h3>
+        <p class="product-blend">Chamomile & Lavender</p>
+        <p class="product-desc">A gentle blend to ease your mind. Sparkling calm in every sip.</p>
+        <a href="#" class="product-cta">Discover Calm <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="product-card reveal-scale stagger-2">
+      <div class="product-visual">
+        <img src="assets/product/yuvo-asset-product-02.png" alt="Yuvo Energy bottle placed on terrazzo surface with fresh rosemary - bright, energetic still life">
+        <div class="product-botanical">Ginger & Lemongrass</div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Yuvo Energy</h3>
+        <p class="product-blend">Ginger & Lemongrass</p>
+        <p class="product-desc">A natural lift without the crash. Zesty, bright, alive.</p>
+        <a href="#" class="product-cta">Discover Energy <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="product-card reveal-scale stagger-3">
+      <div class="product-visual">
+        <img src="assets/dynamic/yuvo-asset-dynamic-03.png" alt="Vibrant splash of mint and cucumber with Yuvo bottle - dynamic, radiant energy">
+        <div class="product-botanical">Rosehip & Hibiscus</div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Yuvo Glow</h3>
+        <p class="product-blend">Rosehip & Hibiscus</p>
+        <p class="product-desc">Radiance from within. Floral, vibrant, beautiful.</p>
+        <a href="#" class="product-cta">Discover Glow <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="products-drag-hint reveal">Drag to explore &mdash;</div>
+</section>
+
+<!-- Values -->
+<section class="values" id="values">
+  <div class="values-bg-accent">
+    <img src="assets/closeup/yuvo-asset-closeup-03.png" alt="" aria-hidden="true">
+  </div>
+  <div class="values-inner">
+    <div class="values-header">
+      <div class="values-label reveal">What We Stand For</div>
+      <h2 class="values-title reveal stagger-1">Clean. Honest. Natural.</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal stagger-1">
+        <div class="value-icon">
+          <img src="assets/closeup/yuvo-asset-closeup-02.png" alt="Sparkling bubbles rising through crystal-clear water">
+        </div>
+        <h3 class="value-name">Zero Sugar</h3>
+        <p class="value-desc">Pure taste, nothing artificial</p>
+      </div>
+      <div class="value-card reveal stagger-2">
+        <div class="value-icon">
+          <img src="assets/closeup/yuvo-asset-closeup-04.png" alt="Yuvo bottle label with pure water beading on the surface">
+        </div>
+        <h3 class="value-name">No Preservatives</h3>
+        <p class="value-desc">Clean label you can trust</p>
+      </div>
+      <div class="value-card reveal stagger-3">
+        <div class="value-icon">
+          <img src="assets/emotion/yuvo-asset-emotion-04.png" alt="Dried flowers, raw honey, and fresh herbs arranged as a still life">
+        </div>
+        <h3 class="value-name">Herbal Extracts</h3>
+        <p class="value-desc">Purposeful botanicals in every blend</p>
+      </div>
+      <div class="value-card reveal stagger-4">
+        <div class="value-icon">
+          <img src="assets/emotion/yuvo-asset-emotion-02.png" alt="Overhead view of a lush herb garden glistening in rain">
+        </div>
+        <h3 class="value-name">Melbourne Made</h3>
+        <p class="value-desc">Crafted locally with care</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Editorial / Lifestyle Image Strip -->
+<section class="editorial-strip">
+  <div class="editorial-strip-item reveal-scale stagger-1">
+    <img src="assets/lifestyle/yuvo-asset-lifestyle-01.png" alt="Sunlit brunch table with Yuvo bottles among fresh food and flowers">
+    <span class="editorial-strip-caption">Sunday brunch</span>
+  </div>
+  <div class="editorial-strip-item reveal-scale stagger-2">
+    <img src="assets/dynamic/yuvo-asset-dynamic-02.png" alt="Yuvo bottle mid-tilt with water droplets suspended in mid-air, golden light">
+    <span class="editorial-strip-caption">The pour</span>
+  </div>
+  <div class="editorial-strip-item reveal-scale stagger-3">
+    <img src="assets/closeup/yuvo-asset-closeup-01.png" alt="Macro shot of condensation droplets on a chilled Yuvo bottle">
+    <span class="editorial-strip-caption">Ice cold</span>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <div class="testimonials-label reveal">Real People</div>
+      <h2 class="testimonials-title reveal stagger-1">What They're Saying</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal stagger-2">
+        <div class="testimonial-lifestyle-img">
+          <img src="assets/lifestyle/yuvo-asset-lifestyle-02.png" alt="Friends enjoying a picnic on lush grass with Yuvo sparkling water">
+        </div>
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I switched from sugary drinks to Yuvo three months ago and I'll never go back. The Calm blend is my evening ritual now.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-location">Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal stagger-3">
+        <div class="testimonial-lifestyle-img">
+          <img src="assets/lifestyle/yuvo-asset-lifestyle-03.png" alt="Person reading by a sunny window with a bottle of Yuvo Naturals">
+        </div>
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">Finally a sparkling water that actually tastes like something. The Ginger & Lemongrass is incredible.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JK</div>
+          <div>
+            <div class="testimonial-name">James K.</div>
+            <div class="testimonial-location">Sydney</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" id="cta">
+  <div class="cta-banner-bg">
+    <img src="assets/dynamic/yuvo-asset-dynamic-01.png" alt="Yuvo sparkling water being poured into a crystal tumbler">
+  </div>
+  <div class="cta-inner">
+    <h2 class="cta-title reveal">Ready to Feel<br>the <span class="peach">Difference</span>?</h2>
+    <p class="cta-sub reveal stagger-1">Try Yuvo Naturals today. Your body will thank you.</p>
+    <a href="#" class="cta-btn reveal stagger-2"><span>Shop Now</span></a>
+  </div>
+  <div class="cta-floating-img">
+    <img src="assets/product/yuvo-asset-product-03.png" alt="Two Yuvo bottles on a wooden board with citrus slices, shot from overhead">
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">yuvo<span>.</span></div>
+        <p class="footer-brand-desc">Clean-label herbal sparkling water crafted in Melbourne. Vitality in every drop.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Stockists</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Range</div>
+        <ul class="footer-links">
+          <li><a href="#">Yuvo Calm</a></li>
+          <li><a href="#">Yuvo Energy</a></li>
+          <li><a href="#">Yuvo Glow</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-acknowledgement">
+      Yuvo Naturals acknowledges the Traditional Custodians of Country throughout Australia and their connections to land, sea and community. We pay our respect to their Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Yuvo Naturals. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ========================================
+  // SCROLL PROGRESS BAR
+  // ========================================
+  const scrollProgress = document.getElementById('scrollProgress');
+
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollTop / docHeight;
+    scrollProgress.style.transform = 'scaleX(' + progress + ')';
+  }
+
+  // ========================================
+  // NAV SCROLL STATE
+  // ========================================
+  const nav = document.getElementById('nav');
+
+  function updateNav() {
+    if (window.scrollY > 80) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+
+  // ========================================
+  // INTERSECTION OBSERVER - REVEAL ANIMATIONS
+  // ========================================
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+  const revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  revealElements.forEach(function(el) { revealObserver.observe(el); });
+
+  // ========================================
+  // CUSTOM CURSOR (desktop)
+  // ========================================
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorRing = document.getElementById('cursorRing');
+
+  if (window.matchMedia('(hover: hover)').matches && cursorDot && cursorRing) {
+    var mouseX = 0, mouseY = 0;
+    var ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = mouseX - 4 + 'px';
+      cursorDot.style.top = mouseY - 4 + 'px';
+    });
+
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      cursorRing.style.left = ringX - 18 + 'px';
+      cursorRing.style.top = ringY - 18 + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Hover effect on interactive elements
+    var hoverTargets = document.querySelectorAll('a, button, .product-card, .value-card, .testimonial-card, .video-play-btn');
+    hoverTargets.forEach(function(target) {
+      target.addEventListener('mouseenter', function() {
+        cursorRing.classList.add('hover');
+        cursorDot.style.transform = 'scale(1.5)';
+      });
+      target.addEventListener('mouseleave', function() {
+        cursorRing.classList.remove('hover');
+        cursorDot.style.transform = 'scale(1)';
+      });
+    });
+  } else {
+    // Hide cursor elements on touch devices
+    if (cursorDot) cursorDot.style.display = 'none';
+    if (cursorRing) cursorRing.style.display = 'none';
+  }
+
+  // ========================================
+  // PRODUCTS HORIZONTAL DRAG SCROLL
+  // ========================================
+  var track = document.getElementById('productsTrack');
+  var isDown = false;
+  var startX;
+  var scrollLeft;
+
+  track.addEventListener('mousedown', function(e) {
+    isDown = true;
+    track.style.cursor = 'grabbing';
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+
+  track.addEventListener('mouseleave', function() {
+    isDown = false;
+    track.style.cursor = 'grab';
+  });
+
+  track.addEventListener('mouseup', function() {
+    isDown = false;
+    track.style.cursor = 'grab';
+  });
+
+  track.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - track.offsetLeft;
+    var walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+  // ========================================
+  // PARALLAX SUBTLE FLOAT ON HERO ELEMENTS
+  // ========================================
+  var hero = document.querySelector('.hero');
+  var heroHeadline = document.querySelector('.hero-headline');
+  var heroShowcase = document.querySelector('.hero-image-showcase');
+
+  function handleParallax() {
+    var scrollY = window.scrollY;
+    var heroHeight = hero.offsetHeight;
+
+    if (scrollY < heroHeight) {
+      var progress = scrollY / heroHeight;
+      heroHeadline.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+      heroHeadline.style.opacity = 1 - progress * 1.2;
+      if (heroShowcase) {
+        heroShowcase.style.transform = 'translateY(' + (scrollY * 0.08) + 'px)';
+      }
+    }
+  }
+
+  // ========================================
+  // STAGGERED LETTER SPACING ON SCROLL
+  // ========================================
+  var storyTitle = document.querySelector('.story-title');
+
+  function handleStoryEffect() {
+    if (!storyTitle) return;
+    var rect = storyTitle.getBoundingClientRect();
+    var viewH = window.innerHeight;
+
+    if (rect.top < viewH && rect.bottom > 0) {
+      var progress = 1 - (rect.top / viewH);
+      var clampedProgress = Math.max(0, Math.min(1, progress));
+      var letterSpacing = -0.03 + (clampedProgress * 0.01);
+      storyTitle.style.letterSpacing = letterSpacing + 'em';
+    }
+  }
+
+  // ========================================
+  // PRODUCT CARDS 3D TILT
+  // ========================================
+  var productCards = document.querySelectorAll('.product-card');
+
+  productCards.forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -4;
+      var rotateY = ((x - centerX) / centerX) * 4;
+
+      card.style.transform = 'translateY(-12px) perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'translateY(0) perspective(800px) rotateX(0deg) rotateY(0deg)';
+    });
+  });
+
+  // ========================================
+  // VALUE CARDS COUNTER ANIMATION
+  // ========================================
+  var valueCards = document.querySelectorAll('.value-card');
+  var valuesAnimated = false;
+
+  var valuesObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !valuesAnimated) {
+        valuesAnimated = true;
+        // Trigger a subtle pulse on each card sequentially
+        valueCards.forEach(function(card, i) {
+          setTimeout(function() {
+            card.style.transition = 'all 0.3s ease';
+            card.style.borderColor = 'rgba(248, 171, 126, 0.4)';
+            setTimeout(function() {
+              card.style.borderColor = 'rgba(209, 213, 219, 0.4)';
+            }, 400);
+          }, i * 150);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  var valuesSection = document.querySelector('.values-grid');
+  if (valuesSection) valuesObserver.observe(valuesSection);
+
+  // ========================================
+  // SCROLL EVENT HANDLER (throttled)
+  // ========================================
+  var ticking = false;
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        updateScrollProgress();
+        updateNav();
+        handleParallax();
+        handleStoryEffect();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ========================================
+  // SMOOTH ANCHOR SCROLL
+  // ========================================
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // ========================================
+  // INITIAL STATE
+  // ========================================
+  updateScrollProgress();
+  updateNav();
+
+})();
+</script>
+</body>
+</html>

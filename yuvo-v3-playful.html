@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuvo Naturals - Vitality in Every Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   YUVO NATURALS - PLAYFUL ORGANIC v4
+   Olipop x Glossier x Melbourne Brunch
+   Now with real photography
+   ============================================= */
+
+:root {
+  --peach: #f8ab7e;
+  --peach-light: #fcd4b8;
+  --peach-glow: #fff0e5;
+  --mauve: #ae77a4;
+  --mauve-light: #cb8dc1;
+  --mauve-soft: #e8d0e4;
+  --slate-dark: #1e293b;
+  --slate-mid: #334155;
+  --slate-light: #64748b;
+  --cream: #FFF8F2;
+  --cream-warm: #FEF3EA;
+  --cream-cool: #F5F0ED;
+  --light-bg: #F0F5FA;
+  --white: #FFFFFF;
+  --border: #e8ddd6;
+
+  --calm-primary: #9b7ec8;
+  --calm-light: #e8dff5;
+  --calm-bg: #f3eefb;
+  --energy-primary: #e8a835;
+  --energy-light: #fbecc5;
+  --energy-bg: #fdf6e8;
+  --glow-primary: #d4698a;
+  --glow-light: #f5d0dc;
+  --glow-bg: #fdf0f4;
+
+  --leaf: #7ab87a;
+  --leaf-light: #d4ecd4;
+  --sage: #8faa8f;
+
+  --section-pad: clamp(60px, 10vw, 120px);
+  --container: min(1200px, 90vw);
+
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+  --r-pill: 100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--slate-mid);
+  background: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Comfortaa', cursive;
+  color: var(--slate-dark);
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--mauve); text-decoration: none; transition: color 0.3s; }
+a:hover { color: var(--mauve-light); }
+
+.container { width: var(--container); margin: 0 auto; }
+
+/* =============================================
+   FLOATING BUBBLES
+   ============================================= */
+.bubbles-container {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(248,171,126,0.12), rgba(174,119,164,0.06));
+  animation: floatBubble linear infinite;
+  will-change: transform;
+}
+
+@keyframes floatBubble {
+  0% { transform: translateY(100vh) translateX(0) scale(0.3); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(var(--drift)) scale(1); opacity: 0; }
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+  background: rgba(255,248,242,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(30,41,59,0.06);
+  padding: 10px 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--slate-dark);
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo .logo-dot {
+  width: 10px; height: 10px;
+  background: var(--peach);
+  border-radius: 50%;
+  display: inline-block;
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--slate-mid);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--peach);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover { color: var(--slate-dark); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--peach) !important;
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: var(--r-pill);
+  font-weight: 600 !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s !important;
+}
+
+.nav-cta::after { display: none !important; }
+.nav-cta:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 20px rgba(248,171,126,0.4) !important;
+  color: var(--white) !important;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-toggle span {
+  width: 24px; height: 2px;
+  background: var(--slate-dark);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 16px 36px;
+  border-radius: var(--r-pill);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--peach);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(248,171,126,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(248,171,126,0.45);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--mauve);
+  border: 2px solid var(--mauve-soft);
+}
+
+.btn-secondary:hover {
+  background: var(--mauve-soft);
+  color: var(--mauve);
+  transform: translateY(-2px);
+  border-color: var(--mauve-light);
+}
+
+.btn-white {
+  background: var(--white);
+  color: var(--peach);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.btn-white:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  color: var(--peach);
+}
+
+.btn:active { transform: scale(0.96) !important; }
+
+/* =============================================
+   WAVY DIVIDERS
+   ============================================= */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.wave-divider svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+.wave-divider.flip { transform: rotate(180deg); }
+
+/* =============================================
+   BLOB DECORATIONS
+   ============================================= */
+.blob {
+  position: absolute;
+  border-radius: 50% 40% 60% 45% / 50% 55% 45% 50%;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.blob-1 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(248,171,126,0.15), rgba(248,171,126,0.02));
+  animation: blobMorph1 12s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(174,119,164,0.12), rgba(174,119,164,0.02));
+  animation: blobMorph2 15s ease-in-out infinite;
+}
+
+.blob-3 {
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(122,184,122,0.1), rgba(122,184,122,0.02));
+  animation: blobMorph3 10s ease-in-out infinite;
+}
+
+@keyframes blobMorph1 {
+  0%, 100% { border-radius: 50% 40% 60% 45% / 50% 55% 45% 50%; transform: rotate(0deg) scale(1); }
+  33% { border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%; transform: rotate(60deg) scale(1.05); }
+  66% { border-radius: 55% 45% 55% 40% / 45% 60% 40% 55%; transform: rotate(-30deg) scale(0.95); }
+}
+
+@keyframes blobMorph2 {
+  0%, 100% { border-radius: 40% 60% 50% 50% / 55% 40% 60% 45%; transform: rotate(0deg) scale(1); }
+  50% { border-radius: 55% 45% 45% 55% / 45% 55% 45% 55%; transform: rotate(90deg) scale(1.08); }
+}
+
+@keyframes blobMorph3 {
+  0%, 100% { border-radius: 60% 40% 50% 50% / 40% 60% 40% 60%; transform: rotate(0deg); }
+  50% { border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%; transform: rotate(-45deg); }
+}
+
+/* =============================================
+   SCROLL ANIMATIONS
+   ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal-left.visible, .reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.6s, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* =============================================
+   SECTION: HERO
+   ============================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(165deg, var(--cream) 0%, var(--peach-glow) 40%, var(--cream-warm) 70%, #f5eef3 100%);
+  padding: calc(var(--section-pad) + 40px) 0 var(--section-pad);
+}
+
+.hero .blob-1 { top: -100px; right: -150px; }
+.hero .blob-2 { bottom: -80px; left: -100px; }
+.hero .blob-3 { top: 30%; left: 10%; }
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-pill);
+  padding: 8px 20px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--mauve);
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  animation: badgeBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+.hero-badge .badge-dot {
+  width: 7px; height: 7px;
+  background: var(--leaf);
+  border-radius: 50%;
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+  0% { opacity: 0; transform: translateY(-20px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  color: var(--slate-dark);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  animation: heroTitle 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, var(--peach) 0%, var(--mauve) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes heroTitle {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--slate-light);
+  max-width: 480px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  animation: heroSub 0.8s ease 0.7s both;
+}
+
+@keyframes heroSub {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: heroButtons 0.8s ease 0.9s both;
+}
+
+@keyframes heroButtons {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero image composition */
+.hero-visual {
+  position: relative;
+  animation: heroVisualIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+
+@keyframes heroVisualIn {
+  0% { opacity: 0; transform: translateY(40px) scale(0.92); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero-img-main {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(30,41,59,0.12);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-img-main img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating secondary image */
+.hero-img-float {
+  position: absolute;
+  bottom: -30px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(30,41,59,0.15);
+  border: 4px solid var(--white);
+  z-index: 3;
+  animation: floatSecondary 4s ease-in-out infinite;
+}
+
+.hero-img-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes floatSecondary {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+/* Floating badge on hero image */
+.hero-img-badge {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  background: var(--white);
+  border-radius: var(--r-pill);
+  padding: 10px 20px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--leaf);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: floatSecondary 5s ease-in-out 0.5s infinite;
+}
+
+.hero-img-badge svg {
+  flex-shrink: 0;
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: var(--peach);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sparkle-1 { top: 25%; right: 20%; animation: sparkle 3s ease-in-out infinite; }
+.sparkle-2 { top: 40%; right: 25%; animation: sparkle 3s ease-in-out 0.5s infinite; width: 4px; height: 4px; background: var(--mauve-light); }
+.sparkle-3 { bottom: 30%; left: 18%; animation: sparkle 3s ease-in-out 1s infinite; width: 5px; height: 5px; background: var(--leaf); }
+.sparkle-4 { top: 20%; left: 25%; animation: sparkle 3s ease-in-out 1.5s infinite; width: 4px; height: 4px; }
+.sparkle-5 { bottom: 35%; right: 15%; animation: sparkle 3s ease-in-out 2s infinite; width: 3px; height: 3px; background: var(--mauve); }
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+
+/* =============================================
+   SECTION: BRAND STORY
+   ============================================= */
+.brand-story {
+  position: relative;
+  padding: var(--section-pad) 0;
+  background: var(--white);
+  z-index: 2;
+}
+
+.brand-story .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.story-visual {
+  position: relative;
+}
+
+.story-photo-stack {
+  position: relative;
+  padding: 20px;
+}
+
+.story-photo-main {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(30,41,59,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.story-photo-main img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+/* Tilted background photo behind main */
+.story-photo-behind {
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  width: 200px;
+  height: 260px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(30,41,59,0.1);
+  border: 4px solid var(--white);
+  z-index: 3;
+  transform: rotate(4deg);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.story-photo-behind:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.story-photo-behind img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Film strip effect */
+.story-film-strip {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  background: var(--cream-warm);
+  border: 2px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 12px 20px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--mauve);
+  z-index: 4;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.story-film-strip::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--peach);
+  border-radius: 50%;
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+.story-text {
+  position: relative;
+  z-index: 2;
+}
+
+.story-label {
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--peach);
+  margin-bottom: 16px;
+}
+
+.story-text h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.story-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--slate-mid);
+  margin-bottom: 20px;
+}
+
+.story-text p:last-of-type {
+  color: var(--slate-light);
+  font-size: 0.95rem;
+}
+
+/* =============================================
+   SECTION: DYNAMIC POUR (VIDEO PLACEHOLDER)
+   ============================================= */
+.dynamic-section {
+  position: relative;
+  padding: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.dynamic-video-wrap {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.dynamic-video-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dynamic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,248,242,0.6) 0%,
+    rgba(0,0,0,0) 30%,
+    rgba(0,0,0,0) 70%,
+    rgba(255,248,242,0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.dynamic-play-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dynamic-play-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+.dynamic-play-btn svg {
+  margin-left: 3px;
+}
+
+.dynamic-text-float {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+}
+
+.dynamic-text-float p {
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--slate-mid);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  padding: 10px 24px;
+  border-radius: var(--r-pill);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   SECTION: PRODUCTS
+   ============================================= */
+.products {
+  position: relative;
+  padding: var(--section-pad) 0;
+  background: var(--cream);
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header .section-label {
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--peach);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--slate-light);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  transition: height 0.4s;
+  z-index: 2;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) rotate(-0.5deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border-color: transparent;
+}
+
+.product-card:hover::before { height: 6px; }
+
+.product-calm::before { background: linear-gradient(90deg, var(--calm-primary), #b99ad8); }
+.product-calm:hover { border-color: var(--calm-light); }
+
+.product-energy::before { background: linear-gradient(90deg, var(--energy-primary), #f0c05a); }
+.product-energy:hover { border-color: var(--energy-light); }
+
+.product-glow::before { background: linear-gradient(90deg, var(--glow-primary), #e88da5); }
+.product-glow:hover { border-color: var(--glow-light); }
+
+/* Product card image area */
+.product-img-wrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.06);
+}
+
+/* Gradient fade at bottom of product image */
+.product-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, var(--white));
+  pointer-events: none;
+}
+
+.product-card-body {
+  padding: 20px 32px 36px;
+}
+
+.product-name {
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.product-calm .product-name { color: var(--calm-primary); }
+.product-energy .product-name { color: var(--energy-primary); }
+.product-glow .product-name { color: var(--glow-primary); }
+
+.product-variety {
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--slate-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: var(--slate-mid);
+  line-height: 1.7;
+}
+
+/* Floating dots on product cards */
+.product-dots {
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+}
+
+.product-dots span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.product-card:hover .product-dots span { opacity: 1; }
+
+.product-calm .product-dots span { background: var(--calm-light); }
+.product-energy .product-dots span { background: var(--energy-light); }
+.product-glow .product-dots span { background: var(--glow-light); }
+
+.product-dots span:nth-child(1) { width: 40px; height: 40px; top: -10px; right: -5px; animation: dotFloat 4s ease-in-out infinite; }
+.product-dots span:nth-child(2) { width: 20px; height: 20px; bottom: 20px; left: -5px; animation: dotFloat 3s ease-in-out 0.5s infinite; }
+.product-dots span:nth-child(3) { width: 14px; height: 14px; top: 40%; right: -3px; animation: dotFloat 5s ease-in-out 1s infinite; }
+
+@keyframes dotFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-5px, -8px); }
+}
+
+/* =============================================
+   SECTION: LIFESTYLE MOSAIC
+   ============================================= */
+.lifestyle {
+  position: relative;
+  padding: var(--section-pad) 0;
+  background: var(--white);
+  z-index: 2;
+}
+
+.lifestyle-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 20px;
+}
+
+.mosaic-item {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mosaic-item:hover img {
+  transform: scale(1.05);
+}
+
+.mosaic-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(30,41,59,0.3) 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.mosaic-item:hover::after {
+  opacity: 1;
+}
+
+.mosaic-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(30,41,59,0.5);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s 0.1s;
+  letter-spacing: 0.5px;
+}
+
+.mosaic-item:hover .mosaic-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Large item spanning 2 rows */
+.mosaic-item.mosaic-tall {
+  grid-row: span 2;
+}
+
+/* Wide item spanning 2 columns */
+.mosaic-item.mosaic-wide {
+  grid-column: span 2;
+}
+
+/* =============================================
+   SECTION: VALUES
+   ============================================= */
+.values {
+  position: relative;
+  padding: var(--section-pad) 0;
+  background: var(--cream);
+  z-index: 2;
+}
+
+.values-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.values-photo {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(30,41,59,0.08);
+  position: relative;
+}
+
+.values-photo img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+/* Botanical overlay corner */
+.values-photo::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(122,184,122,0.15), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.value-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--peach-light);
+  box-shadow: 0 12px 40px rgba(248,171,126,0.1);
+}
+
+.value-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.value-card:hover .value-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.value-card:nth-child(1) .value-icon { background: var(--peach-glow); }
+.value-card:nth-child(2) .value-icon { background: var(--leaf-light); }
+.value-card:nth-child(3) .value-icon { background: var(--mauve-soft); }
+.value-card:nth-child(4) .value-icon { background: var(--energy-light); }
+
+.value-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.value-card p {
+  font-size: 0.85rem;
+  color: var(--slate-light);
+  line-height: 1.6;
+}
+
+/* =============================================
+   SECTION: INGREDIENTS CLOSE-UP
+   ============================================= */
+.ingredients {
+  position: relative;
+  padding: var(--section-pad) 0;
+  background: var(--white);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.ingredients-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ingredients-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ingredient-photo {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(30,41,59,0.06);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ingredient-photo:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.ingredient-photo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.ingredient-photo:first-child {
+  grid-column: span 2;
+}
+
+.ingredient-photo:first-child img {
+  height: 260px;
+}
+
+.ingredients-text h2 {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.ingredients-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--slate-mid);
+  margin-bottom: 16px;
+}
+
+.ingredient-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.ingredient-tag {
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--border);
+  color: var(--slate-mid);
+  background: var(--cream);
+  transition: all 0.3s;
+}
+
+.ingredient-tag:hover {
+  border-color: var(--peach-light);
+  background: var(--peach-glow);
+  color: var(--peach);
+}
+
+/* =============================================
+   SECTION: TESTIMONIALS
+   ============================================= */
+.testimonials {
+  position: relative;
+  padding: var(--section-pad) 0;
+  background: linear-gradient(170deg, var(--cream) 0%, var(--peach-glow) 50%, #f5eef3 100%);
+  z-index: 2;
+}
+
+.testimonials-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.testimonial-feature-img {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(30,41,59,0.1);
+  height: 100%;
+  min-height: 400px;
+}
+
+.testimonial-feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonials-cards {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  padding: 36px 32px;
+  position: relative;
+  border: 1.5px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+}
+
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 40px;
+  width: 24px;
+  height: 24px;
+  background: var(--white);
+  border-right: 1.5px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
+  transform: rotate(45deg);
+}
+
+.testimonial-quote-mark {
+  font-family: 'Comfortaa', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--peach-light);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.testimonial-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--slate-mid);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.testimonial-card:nth-child(1) .testimonial-avatar { background: var(--mauve); }
+.testimonial-card:nth-child(2) .testimonial-avatar { background: var(--peach); }
+
+.testimonial-author-info {
+  font-family: 'Comfortaa', cursive;
+}
+
+.testimonial-author-info strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--slate-dark);
+  display: block;
+}
+
+.testimonial-author-info span {
+  font-size: 0.75rem;
+  color: var(--slate-light);
+}
+
+/* =============================================
+   SECTION: CTA BANNER
+   ============================================= */
+.cta-banner {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--peach) 0%, var(--mauve) 100%);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.cta-banner .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cta-text {
+  color: var(--white);
+}
+
+.cta-text h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.cta-text p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 32px;
+  max-width: 420px;
+  line-height: 1.8;
+}
+
+.cta-img-group {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-img-main {
+  width: 280px;
+  height: 360px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+  border: 4px solid rgba(255,255,255,0.3);
+  transform: rotate(-3deg);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cta-img-main:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.cta-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta-img-secondary {
+  position: absolute;
+  width: 160px;
+  height: 200px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+  border: 3px solid rgba(255,255,255,0.4);
+  bottom: -20px;
+  right: 20px;
+  transform: rotate(5deg);
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cta-img-secondary:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.cta-img-secondary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating shapes in CTA */
+.cta-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.cta-shape-1 {
+  width: 200px; height: 200px;
+  background: var(--white);
+  top: -60px; left: -40px;
+  animation: blobMorph1 8s ease-in-out infinite;
+}
+
+.cta-shape-2 {
+  width: 150px; height: 150px;
+  background: var(--white);
+  bottom: -40px; right: -20px;
+  animation: blobMorph2 10s ease-in-out infinite;
+}
+
+.cta-shape-3 {
+  width: 80px; height: 80px;
+  background: var(--white);
+  top: 20%; right: 15%;
+  animation: blobMorph3 6s ease-in-out infinite;
+}
+
+/* =============================================
+   SECTION: EMOTION / ATMOSPHERE
+   ============================================= */
+.atmosphere {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.atmosphere-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.atmosphere-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    var(--cream) 0%,
+    rgba(255,248,242,0) 30%,
+    rgba(255,248,242,0) 70%,
+    rgba(255,248,242,0.4) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.atmosphere-quote {
+  font-family: 'Comfortaa', cursive;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  color: var(--white);
+  text-align: center;
+  max-width: 600px;
+  padding: 0 24px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  line-height: 1.6;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer {
+  background: var(--slate-dark);
+  padding: 60px 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-brand {
+  font-family: 'Comfortaa', cursive;
+}
+
+.footer-brand .footer-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-brand .footer-logo .logo-dot {
+  width: 8px; height: 8px;
+  background: var(--peach);
+  border-radius: 50%;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  max-width: 340px;
+}
+
+.footer-col h4 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--peach); }
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer-social a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.footer-social a:hover {
+  background: var(--peach);
+  color: var(--white) !important;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-acknowledgement {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  font-family: 'Comfortaa', cursive;
+}
+
+/* =============================================
+   IMAGE PLACEHOLDER (for missing shots)
+   ============================================= */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--slate-light);
+  line-height: 1.6;
+  background: linear-gradient(135deg, var(--cream-warm), var(--peach-glow));
+  border: 2px dashed var(--border);
+  border-radius: inherit;
+}
+
+.img-placeholder.video-placeholder {
+  background: linear-gradient(135deg, var(--slate-dark) 0%, #2d3748 100%);
+  color: rgba(255,255,255,0.6);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1024px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-content { order: 1; }
+  .hero-visual { order: 0; max-width: 500px; margin: 0 auto; }
+  .hero-sub { margin: 0 auto 36px; }
+  .hero-buttons { justify-content: center; }
+  .hero-img-main img { height: 380px; }
+  .hero-img-float { left: auto; right: -20px; bottom: -20px; width: 140px; height: 140px; }
+
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .lifestyle-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .mosaic-item.mosaic-tall { grid-row: span 1; }
+  .mosaic-item.mosaic-wide { grid-column: span 1; }
+
+  .values-layout { grid-template-columns: 1fr; }
+  .values-photo { max-width: 500px; margin: 0 auto; }
+  .values-photo img { height: 320px; }
+
+  .ingredients-layout { grid-template-columns: 1fr; }
+  .ingredients-photos { max-width: 500px; margin: 0 auto; }
+
+  .testimonials-layout { grid-template-columns: 1fr; }
+  .testimonial-feature-img { max-width: 400px; margin: 0 auto; min-height: 300px; }
+  .testimonials-cards { grid-column: span 1; }
+
+  .cta-banner .container { grid-template-columns: 1fr; text-align: center; }
+  .cta-text p { margin: 0 auto 32px; }
+  .cta-img-group { margin-top: 20px; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: flex; }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: rgba(255,248,242,0.98);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .hero h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+
+  .brand-story .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-visual { order: -1; max-width: 400px; margin: 0 auto; }
+  .story-photo-behind { display: none; }
+
+  .products-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+
+  .lifestyle-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .mosaic-item.mosaic-wide { grid-column: span 1; }
+
+  .values-grid { grid-template-columns: 1fr 1fr; }
+
+  .dynamic-video-wrap { height: 350px; }
+  .atmosphere-img { height: 300px; }
+
+  .testimonials-layout { grid-template-columns: 1fr; }
+  .testimonial-feature-img { display: none; }
+  .testimonials-cards { grid-column: span 1; }
+
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-brand p { margin: 0 auto; }
+  .footer-social { justify-content: center; }
+  .footer-bottom { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .ingredients-photos { grid-template-columns: 1fr; }
+  .ingredient-photo:first-child { grid-column: span 1; }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
+
+  .cta-img-secondary { display: none; }
+  .cta-img-main { width: 220px; height: 280px; }
+}
+
+/* =============================================
+   SCROLLBAR & SELECTION
+   ============================================= */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb {
+  background: var(--peach-light);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--peach); }
+
+::selection {
+  background: var(--peach-light);
+  color: var(--slate-dark);
+}
+
+.wave-section-gap {
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+</style>
+</head>
+<body>
+
+<!-- ====================== FLOATING BUBBLES ====================== -->
+<div class="bubbles-container" id="bubblesContainer"></div>
+
+<!-- ====================== NAVBAR ====================== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <span class="logo-dot"></span>
+      yuvo
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#lifestyle">Lifestyle</a></li>
+      <li><a href="#values">Values</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#" class="nav-cta">Shop Now</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero">
+  <!-- Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Sparkles -->
+  <div class="sparkle sparkle-1"></div>
+  <div class="sparkle sparkle-2"></div>
+  <div class="sparkle sparkle-3"></div>
+  <div class="sparkle sparkle-4"></div>
+  <div class="sparkle sparkle-5"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Herbal Sparkling Water
+      </div>
+      <h1><span>Vitality</span> in Every Drop</h1>
+      <p class="hero-sub">Clean-label herbal sparkling water. No sugar. No preservatives. Made in Melbourne.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">
+          Explore Our Range
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn btn-secondary">Find Yuvo Near You</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <!-- Main hero image: Three bottles on linen with botanicals -->
+      <div class="hero-img-main">
+        <img src="assets/product/yuvo-asset-product-01.png" alt="Three Yuvo Naturals bottles arranged on linen cloth surrounded by fresh botanicals">
+      </div>
+
+      <!-- Floating secondary: Pouring action shot -->
+      <div class="hero-img-float">
+        <img src="assets/dynamic/yuvo-asset-dynamic-01.png" alt="Yuvo being poured into a crystal tumbler">
+      </div>
+
+      <!-- Floating badge -->
+      <div class="hero-img-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7ab87a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 13V7"/><path d="M9 10l3-3 3 3"/></svg>
+        100% Natural
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave divider: Hero -> Brand Story -->
+<div class="wave-divider wave-section-gap">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,40 C240,60 480,10 720,30 C960,50 1200,15 1440,35 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+  </svg>
+</div>
+
+<!-- ====================== BRAND STORY ====================== -->
+<section class="brand-story" id="story">
+  <div class="container">
+    <div class="story-visual reveal-left">
+      <div class="story-photo-stack">
+        <!-- Main story photo: Single bottle on terrazzo with rosemary -->
+        <div class="story-photo-main">
+          <img src="assets/product/yuvo-asset-product-02.png" alt="Yuvo Naturals bottle resting on terrazzo surface surrounded by fresh rosemary sprigs">
+        </div>
+
+        <!-- Tilted secondary photo: Botanical ingredients on linen -->
+        <div class="story-photo-behind">
+          <img src="assets/closeup/yuvo-asset-closeup-03.png" alt="Fresh botanical ingredients laid out on natural linen cloth">
+        </div>
+
+        <!-- Film strip label -->
+        <div class="story-film-strip">
+          Est. Melbourne
+        </div>
+      </div>
+    </div>
+    <div class="story-text reveal-right">
+      <span class="story-label">Our Story</span>
+      <h2>Nature, Refined</h2>
+      <p>Born in Melbourne, Yuvo Naturals crafts sparkling hydration infused with purposeful herbal extracts. Every bottle is a clean-label promise - no sugar, no preservatives, no compromise. Just pure vitality from nature's finest botanicals.</p>
+      <p>We believe hydration should do more than quench. Each blend is designed to nourish, refresh, and restore - drawing on centuries of herbal wisdom, bottled for modern life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== DYNAMIC POUR SECTION ====================== -->
+<!-- VIDEO: Slow-motion pour of Yuvo sparkling water into a glass, capturing bubbles and botanical colour. Film-grain overlay, warm natural light. Until video exists, using dynamic still. -->
+<section class="dynamic-section">
+  <div class="dynamic-video-wrap">
+    <img src="assets/dynamic/yuvo-asset-dynamic-03.png" alt="Mint and cucumber splash burst - effervescent sparkling water in motion">
+    <div class="dynamic-overlay">
+      <button class="dynamic-play-btn" aria-label="Play video">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--peach)" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+    </div>
+    <div class="dynamic-text-float">
+      <p>VIDEO: Slow-motion pour with botanical infusion - Coming Soon</p>
+    </div>
+  </div>
+</section>
+
+<!-- Wave divider: Dynamic -> Products -->
+<div class="wave-divider flip wave-section-gap">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,20 C360,50 720,0 1080,30 C1260,42 1380,10 1440,25 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+  </svg>
+</div>
+
+<!-- ====================== PRODUCTS ====================== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Collection</span>
+      <h2>Find Your Blend</h2>
+      <p>Three purposeful blends, each crafted with intention. Which one speaks to you?</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- Calm -->
+      <div class="product-card product-calm reveal delay-1">
+        <div class="product-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="product-img-wrap">
+          <!-- Single bottle on wet stone with eucalyptus - calm, cool, serene mood -->
+          <img src="assets/product/yuvo-asset-product-04.png" alt="Yuvo Calm bottle resting on wet stone with eucalyptus leaves - serene and calming">
+        </div>
+        <div class="product-card-body">
+          <h3 class="product-name">Yuvo Calm</h3>
+          <div class="product-variety">Chamomile &amp; Lavender</div>
+          <p class="product-desc">A gentle blend to ease your mind. Sparkling calm in every sip.</p>
+        </div>
+      </div>
+
+      <!-- Energy -->
+      <div class="product-card product-energy reveal delay-2">
+        <div class="product-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="product-img-wrap">
+          <!-- Mid-tilt with suspended droplets - dynamic, energetic -->
+          <img src="assets/dynamic/yuvo-asset-dynamic-02.png" alt="Yuvo Energy bottle mid-tilt with suspended droplets - dynamic and vibrant">
+        </div>
+        <div class="product-card-body">
+          <h3 class="product-name">Yuvo Energy</h3>
+          <div class="product-variety">Ginger &amp; Lemongrass</div>
+          <p class="product-desc">A natural lift without the crash. Zesty, bright, alive.</p>
+        </div>
+      </div>
+
+      <!-- Glow -->
+      <div class="product-card product-glow reveal delay-3">
+        <div class="product-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="product-img-wrap">
+          <!-- Two bottles on wooden board with citrus overhead - vibrant, glowing -->
+          <img src="assets/product/yuvo-asset-product-03.png" alt="Two Yuvo Glow bottles on a wooden board with fresh citrus slices viewed from overhead">
+        </div>
+        <div class="product-card-body">
+          <h3 class="product-name">Yuvo Glow</h3>
+          <div class="product-variety">Rosehip &amp; Hibiscus</div>
+          <p class="product-desc">Radiance from within. Floral, vibrant, beautiful.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave divider: Products -> Lifestyle -->
+<div class="wave-divider wave-section-gap">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,30 C180,55 360,5 540,25 C720,45 900,10 1080,35 C1260,55 1380,20 1440,30 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+  </svg>
+</div>
+
+<!-- ====================== LIFESTYLE MOSAIC ====================== -->
+<section class="lifestyle" id="lifestyle">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Yuvo Life</span>
+      <h2>Made for Your Moments</h2>
+      <p>From morning light to garden parties - Yuvo fits right in.</p>
+    </div>
+
+    <div class="lifestyle-mosaic">
+      <!-- Tall: Sunlit brunch table -->
+      <div class="mosaic-item mosaic-tall reveal-scale delay-1">
+        <img src="assets/lifestyle/yuvo-asset-lifestyle-01.png" alt="Sunlit brunch table with Yuvo bottles, pastries, and fresh flowers">
+        <span class="mosaic-label">Sunday Brunch</span>
+      </div>
+
+      <!-- Regular: Picnic on grass -->
+      <div class="mosaic-item reveal-scale delay-2">
+        <img src="assets/lifestyle/yuvo-asset-lifestyle-02.png" alt="Picnic spread on green grass with Yuvo and fresh fruit">
+        <span class="mosaic-label">Park Days</span>
+      </div>
+
+      <!-- Regular: Window seat reading -->
+      <div class="mosaic-item reveal-scale delay-3">
+        <img src="assets/lifestyle/yuvo-asset-lifestyle-03.png" alt="Cozy window seat with a book and Yuvo bottle in soft natural light">
+        <span class="mosaic-label">Quiet Moments</span>
+      </div>
+
+      <!-- Wide: Garden party -->
+      <div class="mosaic-item mosaic-wide reveal-scale delay-4">
+        <img src="assets/lifestyle/yuvo-asset-lifestyle-04.png" alt="Garden party scene with Yuvo bottles on a decorated outdoor table">
+        <span class="mosaic-label">Garden Gatherings</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave divider: Lifestyle -> Values -->
+<div class="wave-divider flip wave-section-gap">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,25 C240,50 480,5 720,30 C960,55 1200,10 1440,40 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+  </svg>
+</div>
+
+<!-- ====================== VALUES ====================== -->
+<section class="values" id="values">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What We Stand For</span>
+      <h2>The Yuvo Promise</h2>
+      <p>Every bottle carries our commitment to purity, taste, and wellness.</p>
+    </div>
+
+    <div class="values-layout">
+      <!-- Values photo: Morning light, linen curtains, wildflower -->
+      <div class="values-photo reveal-left">
+        <img src="assets/emotion/yuvo-asset-emotion-01.png" alt="Soft morning light filtering through linen curtains with a single wildflower - capturing the natural purity of Yuvo's ingredients">
+      </div>
+
+      <div class="values-grid reveal-right">
+        <div class="value-card delay-1">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f8ab7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2-6 2 6"/><path d="M14 12l2-6 2 6"/><line x1="7" y1="12" x2="11" y2="12"/><line x1="13" y1="12" x2="17" y2="12"/><path d="M12 12v6"/></svg>
+          </div>
+          <h3>Zero Sugar</h3>
+          <p>Pure taste, nothing artificial</p>
+        </div>
+
+        <div class="value-card delay-2">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7ab87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 10-16 0c0 4.5 4 8 8 12z"/><path d="M12 13V7"/><path d="M9 10l3-3 3 3"/></svg>
+          </div>
+          <h3>No Preservatives</h3>
+          <p>Clean label you can trust</p>
+        </div>
+
+        <div class="value-card delay-3">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ae77a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L9 9H2l6 4.5L5.5 21 12 16l6.5 5-2.5-7.5L22 9h-7L12 2z"/></svg>
+          </div>
+          <h3>Herbal Extracts</h3>
+          <p>Purposeful botanicals in every blend</p>
+        </div>
+
+        <div class="value-card delay-4">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8a835" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><rect x="9" y="9" width="2" height="2"/><rect x="13" y="9" width="2" height="2"/><rect x="9" y="13" width="2" height="2"/><rect x="13" y="13" width="2" height="2"/></svg>
+          </div>
+          <h3>Melbourne Made</h3>
+          <p>Crafted locally with care</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== INGREDIENTS CLOSE-UP ====================== -->
+<section class="ingredients">
+  <div class="container">
+    <div class="ingredients-layout">
+      <div class="ingredients-text reveal-left">
+        <span class="story-label">Transparency</span>
+        <h2>See What's Inside</h2>
+        <p>Every ingredient is chosen with purpose. No fillers, no shortcuts. Just botanicals that do something for your body.</p>
+        <p>We source locally where we can, and always organic. Each batch is small, each bottle is real.</p>
+        <div class="ingredient-tags">
+          <span class="ingredient-tag">Chamomile</span>
+          <span class="ingredient-tag">Lavender</span>
+          <span class="ingredient-tag">Ginger</span>
+          <span class="ingredient-tag">Lemongrass</span>
+          <span class="ingredient-tag">Rosehip</span>
+          <span class="ingredient-tag">Hibiscus</span>
+          <span class="ingredient-tag">Eucalyptus</span>
+          <span class="ingredient-tag">Mint</span>
+        </div>
+      </div>
+
+      <div class="ingredients-photos reveal-right">
+        <!-- Wide: Bottle label with water beading -->
+        <div class="ingredient-photo">
+          <img src="assets/closeup/yuvo-asset-closeup-04.png" alt="Close-up of Yuvo bottle label with water droplets beading on the glass surface">
+        </div>
+        <!-- Small: Condensation droplets macro -->
+        <div class="ingredient-photo">
+          <img src="assets/closeup/yuvo-asset-closeup-01.png" alt="Macro close-up of condensation droplets on a cold Yuvo bottle">
+        </div>
+        <!-- Small: Bubbles rising in glass -->
+        <div class="ingredient-photo">
+          <img src="assets/closeup/yuvo-asset-closeup-02.png" alt="Delicate bubbles rising through a glass of Yuvo sparkling water">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ATMOSPHERE BREAK ====================== -->
+<!-- Emotion: Sunlight through eucalyptus - nature-connected, dreamy -->
+<section class="atmosphere">
+  <img class="atmosphere-img" src="assets/emotion/yuvo-asset-emotion-03.png" alt="Golden sunlight filtering through eucalyptus leaves creating a natural, dreamy atmosphere">
+  <div class="atmosphere-overlay">
+    <p class="atmosphere-quote reveal">"Hydration should feel like a moment, not a chore."</p>
+  </div>
+</section>
+
+<!-- Wave divider: Atmosphere -> Testimonials -->
+<div class="wave-divider flip wave-section-gap">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,25 C240,50 480,5 720,30 C960,55 1200,10 1440,40 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+  </svg>
+</div>
+
+<!-- ====================== TESTIMONIALS ====================== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Real People, Real Sips</span>
+      <h2>What They're Saying</h2>
+    </div>
+
+    <div class="testimonials-layout">
+      <!-- Feature image: Still life with dried flowers, honey, herbs -->
+      <div class="testimonial-feature-img reveal-left">
+        <img src="assets/emotion/yuvo-asset-emotion-04.png" alt="Still life arrangement of dried flowers, honey, and fresh herbs - the botanical world of Yuvo">
+      </div>
+
+      <div class="testimonials-cards">
+        <div class="testimonial-card reveal delay-1">
+          <div class="testimonial-quote-mark">"</div>
+          <p>I switched from sugary drinks to Yuvo three months ago and I'll never go back. The Calm blend is my evening ritual now.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div class="testimonial-author-info">
+              <strong>Sarah M.</strong>
+              <span>Melbourne</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="testimonial-quote-mark">"</div>
+          <p>Finally a sparkling water that actually tastes like something. The Ginger &amp; Lemongrass is incredible.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JK</div>
+            <div class="testimonial-author-info">
+              <strong>James K.</strong>
+              <span>Sydney</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave divider: Testimonials -> CTA -->
+<div class="wave-divider wave-section-gap" style="margin-bottom: -2px;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,35 C360,55 720,10 1080,40 C1260,50 1380,25 1440,30 L1440,60 L0,60 Z" fill="url(#ctaGrad)"/>
+    <defs>
+      <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f8ab7e"/>
+        <stop offset="100%" stop-color="#ae77a4"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+<!-- ====================== CTA BANNER ====================== -->
+<section class="cta-banner">
+  <div class="cta-shape cta-shape-1"></div>
+  <div class="cta-shape cta-shape-2"></div>
+  <div class="cta-shape cta-shape-3"></div>
+
+  <div class="container">
+    <div class="cta-text">
+      <h2 class="reveal">Ready to Feel the Difference?</h2>
+      <p class="reveal delay-1">Try Yuvo Naturals today. Your body will thank you.</p>
+      <a href="#" class="btn btn-white reveal delay-2">
+        Shop Now
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="cta-img-group reveal-right">
+      <!-- Uncapping with mist rising - anticipation, freshness -->
+      <div class="cta-img-main">
+        <img src="assets/dynamic/yuvo-asset-dynamic-04.png" alt="Yuvo bottle being uncapped with mist rising from the opening">
+      </div>
+      <!-- Overhead herb garden in rain -->
+      <div class="cta-img-secondary">
+        <img src="assets/emotion/yuvo-asset-emotion-02.png" alt="Overhead view of a herb garden with rain droplets on leaves">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave divider: CTA -> Footer -->
+<div class="wave-divider flip wave-section-gap" style="margin-top: -2px;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,20 C360,50 720,5 1080,35 C1260,50 1380,15 1440,25 L1440,60 L0,60 Z" fill="#1e293b"/>
+  </svg>
+</div>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-dot"></span>
+          yuvo
+        </div>
+        <p>Herbal sparkling water crafted in Melbourne. Clean label. No compromises. Vitality in every drop.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">All Products</a></li>
+          <li><a href="#">Yuvo Calm</a></li>
+          <li><a href="#">Yuvo Energy</a></li>
+          <li><a href="#">Yuvo Glow</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Stockists</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-acknowledgement">Yuvo Naturals acknowledges the Traditional Custodians of Country throughout Australia and their connections to land, sea and community.</p>
+      <p class="footer-copyright">&copy; 2026 Yuvo Naturals. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================== JAVASCRIPT ====================== -->
+<script>
+(function() {
+  'use strict';
+
+  // -- Floating Bubbles --
+  const bubblesContainer = document.getElementById('bubblesContainer');
+  const BUBBLE_COUNT = 18;
+
+  for (let i = 0; i < BUBBLE_COUNT; i++) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    const size = Math.random() * 40 + 10;
+    const left = Math.random() * 100;
+    const duration = Math.random() * 15 + 12;
+    const delay = Math.random() * 20;
+    const drift = (Math.random() - 0.5) * 100;
+
+    bubble.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${left}%;
+      animation-duration: ${duration}s;
+      animation-delay: ${delay}s;
+      --drift: ${drift}px;
+    `;
+    bubblesContainer.appendChild(bubble);
+  }
+
+  // -- Navbar Scroll --
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // -- Mobile Menu --
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  mobileToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const spans = mobileToggle.querySelectorAll('span');
+    if (navLinks.classList.contains('active')) {
+      spans[0].style.transform = 'rotate(45deg) translateY(7px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      const spans = mobileToggle.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+
+  // -- Scroll Reveal (IntersectionObserver) --
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // -- Product Card Tilt (subtle) --
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `translateY(-8px) rotate(${x * -2}deg) perspective(800px) rotateX(${y * -3}deg) rotateY(${x * 3}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  // -- Smooth Scroll for Anchor Links --
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // -- Parallax Blobs on Scroll --
+  const blobs = document.querySelectorAll('.blob');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    blobs.forEach((blob, i) => {
+      const speed = 0.03 + (i * 0.01);
+      blob.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  }, { passive: true });
+
+  // -- Easter Egg: Click hero sparkles --
+  document.querySelectorAll('.sparkle').forEach(sparkle => {
+    sparkle.addEventListener('click', () => {
+      sparkle.style.transition = 'transform 0.3s, opacity 0.3s';
+      sparkle.style.transform = 'scale(3)';
+      sparkle.style.opacity = '0';
+      setTimeout(() => {
+        sparkle.style.transform = 'scale(1)';
+        sparkle.style.opacity = '';
+        sparkle.style.transition = '';
+      }, 600);
+    });
+  });
+
+  // -- Mosaic image parallax on scroll --
+  const mosaicItems = document.querySelectorAll('.mosaic-item img');
+  window.addEventListener('scroll', () => {
+    mosaicItems.forEach(img => {
+      const rect = img.parentElement.getBoundingClientRect();
+      const scrollPercent = (rect.top - window.innerHeight) / (rect.height + window.innerHeight);
+      const translate = scrollPercent * 15;
+      img.style.transform = `translateY(${translate}px)`;
+    });
+  }, { passive: true });
+
+})();
+</script>
+</body>
+</html>

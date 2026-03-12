@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuvo Naturals — Vitality in Every Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   CSS RESET & VARIABLES
+   ======================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --peach: #f8ab7e;
+  --peach-soft: #fcd4b8;
+  --peach-deep: #e8945f;
+  --mauve: #ae77a4;
+  --mauve-light: #cb8dc1;
+  --mauve-soft: #d4a8cd;
+  --mauve-deep: #8b5a82;
+  --dark-slate: #1e293b;
+  --medium-slate: #334155;
+  --light-bg: #F0F5FA;
+  --white: #FFFFFF;
+  --border-gray: #D1D5DB;
+  --cream: #faf7f4;
+  --warm-cream: #f5efe8;
+  --sage: #8a9a7b;
+  --sage-light: #c4d1bb;
+  --botanical-dark: #2d3a2e;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', sans-serif;
+
+  --section-pad: clamp(80px, 12vw, 160px);
+  --container-max: 1280px;
+  --container-narrow: 860px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--medium-slate);
+  background: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 60px);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 60px);
+}
+
+/* ========================================
+   GLOBAL ANIMATION CLASSES
+   ======================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+.stagger-7 { transition-delay: 0.7s; }
+
+/* ========================================
+   FLOATING BOTANICAL ELEMENTS
+   ======================================== */
+.botanical-float {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  font-size: 120px;
+  color: var(--sage);
+  animation: floatDrift 25s ease-in-out infinite;
+}
+
+.botanical-float:nth-child(1) {
+  top: 15%;
+  left: -40px;
+  animation-delay: 0s;
+  animation-duration: 28s;
+}
+
+.botanical-float:nth-child(2) {
+  top: 45%;
+  right: -30px;
+  animation-delay: -8s;
+  animation-duration: 32s;
+  font-size: 90px;
+  opacity: 0.03;
+}
+
+.botanical-float:nth-child(3) {
+  top: 75%;
+  left: 5%;
+  animation-delay: -15s;
+  animation-duration: 35s;
+  font-size: 70px;
+  opacity: 0.035;
+}
+
+@keyframes floatDrift {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-30px) rotate(3deg); }
+  50% { transform: translateY(-15px) rotate(-2deg); }
+  75% { transform: translateY(-40px) rotate(1deg); }
+}
+
+/* ========================================
+   FILM GRAIN OVERLAY (global)
+   ======================================== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav.scrolled {
+  background: rgba(250, 247, 244, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 14px 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 60px);
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--dark-slate);
+  letter-spacing: 0.02em;
+}
+
+.nav__logo span {
+  color: var(--mauve);
+}
+
+.nav__links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav__links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--medium-slate);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--mauve);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav__links a:hover {
+  color: var(--mauve);
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+.nav__cta {
+  font-size: 0.8rem !important;
+  letter-spacing: 0.1em !important;
+  padding: 10px 24px;
+  border: 1px solid var(--dark-slate);
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.nav__cta:hover {
+  background: var(--dark-slate) !important;
+  color: var(--white) !important;
+}
+
+.nav__cta::after { display: none !important; }
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--dark-slate);
+  transition: all 0.3s;
+}
+
+/* ========================================
+   HERO SECTION - Split layout with product image
+   ======================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(170deg, var(--cream) 0%, var(--warm-cream) 40%, #f0e8df 70%, #ebe0d4 100%);
+}
+
+.hero__botanical-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero__botanical-bg::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(ellipse, rgba(174, 119, 164, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: heroOrb1 20s ease-in-out infinite;
+}
+
+.hero__botanical-bg::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(248, 171, 126, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: heroOrb2 24s ease-in-out infinite;
+}
+
+@keyframes heroOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.05); }
+  66% { transform: translate(20px, -20px) scale(0.95); }
+}
+
+@keyframes heroOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-25px, 15px) scale(0.92); }
+}
+
+.hero__leaf {
+  position: absolute;
+  opacity: 0;
+  animation: leafAppear 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero__leaf--1 {
+  top: 12%;
+  right: 8%;
+  width: 180px;
+  animation-delay: 1.2s;
+  transform: rotate(-15deg);
+}
+
+.hero__leaf--2 {
+  bottom: 15%;
+  left: 5%;
+  width: 140px;
+  animation-delay: 1.6s;
+  transform: rotate(10deg);
+}
+
+.hero__leaf--3 {
+  top: 30%;
+  left: 3%;
+  width: 100px;
+  animation-delay: 2s;
+  transform: rotate(-30deg);
+}
+
+@keyframes leafAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) rotate(var(--leaf-rotate, 0deg)) scale(0.8);
+  }
+  100% {
+    opacity: 0.10;
+    transform: translateY(0) rotate(var(--leaf-rotate, 0deg)) scale(1);
+  }
+}
+
+.hero__particles {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat 8s ease-in-out infinite;
+}
+
+.particle--peach { background: var(--peach); }
+.particle--mauve { background: var(--mauve-light); }
+.particle--sage { background: var(--sage-light); }
+
+/* Hero split layout */
+.hero__split {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 80px);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 120px clamp(24px, 5vw, 60px) 80px;
+  min-height: 100vh;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  border: 1px solid rgba(174, 119, 164, 0.3);
+  padding: 8px 24px;
+  border-radius: 100px;
+  margin-bottom: 36px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--dark-slate);
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--mauve);
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--medium-slate);
+  max-width: 440px;
+  margin-bottom: 44px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;
+}
+
+.hero__image-wrapper {
+  position: relative;
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  animation: heroImageIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+.hero__image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(174, 119, 164, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.hero__image-frame {
+  position: relative;
+  border-radius: 240px 240px 32px 32px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  max-height: 72vh;
+  box-shadow:
+    0 40px 80px rgba(30, 41, 59, 0.08),
+    0 16px 32px rgba(174, 119, 164, 0.06);
+}
+
+.hero__image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero__image-frame:hover img {
+  transform: scale(1.04);
+}
+
+/* Decorative ring around hero image */
+.hero__image-ring {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  border: 1px solid rgba(174, 119, 164, 0.15);
+  border-radius: 50%;
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+.hero__image-ring--2 {
+  top: auto;
+  right: auto;
+  bottom: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  border-color: rgba(248, 171, 126, 0.12);
+  animation-delay: -3s;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes heroImageIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary {
+  background: var(--dark-slate);
+  color: var(--white);
+  border: 1px solid var(--dark-slate);
+}
+
+.btn--primary:hover {
+  background: var(--mauve-deep);
+  border-color: var(--mauve-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(174, 119, 164, 0.2);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--dark-slate);
+  border: 1px solid var(--border-gray);
+}
+
+.btn--secondary:hover {
+  border-color: var(--mauve);
+  color: var(--mauve);
+  transform: translateY(-2px);
+}
+
+.btn--large {
+  padding: 18px 44px;
+  font-size: 0.9rem;
+}
+
+/* Hero scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+  z-index: 3;
+}
+
+.hero__scroll span {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--medium-slate);
+  opacity: 0.5;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--mauve), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+  50% { opacity: 0.8; transform: scaleY(1); }
+}
+
+/* ========================================
+   BRAND STORY SECTION - Side by side
+   ======================================== */
+.story {
+  padding: var(--section-pad) 0;
+  position: relative;
+  background: var(--white);
+}
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 60px);
+}
+
+.story__image-col {
+  position: relative;
+}
+
+.story__image-main {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+.story__image-main img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  transition: transform 4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.story__image-main:hover img {
+  transform: scale(1.03);
+}
+
+/* Small inset image */
+.story__image-inset {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.story__image-inset img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story__text-col {
+  padding-right: clamp(0px, 3vw, 40px);
+}
+
+.story__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--mauve);
+  margin-bottom: 28px;
+}
+
+.story__label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  margin-bottom: 20px;
+}
+
+.story__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 300;
+  color: var(--dark-slate);
+  margin-bottom: 32px;
+  line-height: 1.15;
+}
+
+.story__body p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--medium-slate);
+  margin-bottom: 24px;
+}
+
+.story__body p:last-child {
+  margin-bottom: 0;
+}
+
+.story__ornament {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.story__ornament-line {
+  width: 80px;
+  height: 1px;
+  background: var(--border-gray);
+}
+
+.story__ornament-icon {
+  color: var(--sage);
+  opacity: 0.4;
+  font-size: 1.2rem;
+}
+
+/* ========================================
+   IMMERSIVE IMAGE STRIP
+   ======================================== */
+.immersive {
+  position: relative;
+  height: clamp(400px, 60vh, 600px);
+  overflow: hidden;
+}
+
+.immersive__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.immersive__bg img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center 30%;
+  position: absolute;
+  top: -10%;
+}
+
+.immersive__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 41, 59, 0.25) 0%,
+    rgba(30, 41, 59, 0.45) 50%,
+    rgba(30, 41, 59, 0.3) 100%
+  );
+}
+
+.immersive__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.immersive__quote {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  max-width: 700px;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+}
+
+.immersive__credit {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Video placeholder styling */
+.video-placeholder {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px dashed rgba(255,255,255,0.3);
+  border-radius: 12px;
+  padding: 14px 20px;
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.video-placeholder__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.video-placeholder__text {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* ========================================
+   PRODUCT SHOWCASE
+   ======================================== */
+.products {
+  padding: var(--section-pad) 0;
+  position: relative;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.products__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.products__label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--peach-deep);
+  margin-bottom: 20px;
+}
+
+.products__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  color: var(--dark-slate);
+  line-height: 1.15;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.product-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(0,0,0,0.04);
+}
+
+.product-card__visual {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.product-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-card:hover .product-card__visual img {
+  transform: scale(1.06);
+}
+
+/* Subtle gradient overlay at bottom of product image */
+.product-card__visual::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(255,255,255,0.6), transparent);
+  pointer-events: none;
+}
+
+.product-card__content {
+  padding: 32px 28px 36px;
+}
+
+.product-card__name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--dark-slate);
+  margin-bottom: 4px;
+}
+
+.product-card__blend {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  margin-bottom: 14px;
+}
+
+.product-card__desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--medium-slate);
+  margin-bottom: 24px;
+}
+
+.product-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark-slate);
+  transition: all 0.3s;
+}
+
+.product-card__link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-card:hover .product-card__link {
+  color: var(--mauve);
+}
+
+.product-card:hover .product-card__link svg {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   LIFESTYLE GALLERY - Mosaic grid
+   ======================================== */
+.gallery {
+  padding: var(--section-pad) 0 calc(var(--section-pad) * 0.7);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.gallery__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.gallery__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 20px;
+}
+
+.gallery__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--dark-slate);
+  line-height: 1.15;
+}
+
+.gallery__mosaic {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 16px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 60px);
+}
+
+.gallery__item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.05);
+}
+
+/* Mosaic layout: first row 7+5, second row 4+4+4 */
+.gallery__item:nth-child(1) { grid-column: 1 / 8; grid-row: 1; }
+.gallery__item:nth-child(2) { grid-column: 8 / 13; grid-row: 1; }
+.gallery__item:nth-child(3) { grid-column: 1 / 5; grid-row: 2; }
+.gallery__item:nth-child(4) { grid-column: 5 / 9; grid-row: 2; }
+.gallery__item:nth-child(5) { grid-column: 9 / 13; grid-row: 2; }
+
+/* ========================================
+   VALUES SECTION
+   ======================================== */
+.values {
+  padding: var(--section-pad) 0;
+  background: var(--dark-slate);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image overlay */
+.values__bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.values__bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.06;
+  mix-blend-mode: luminosity;
+}
+
+.values::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(174, 119, 164, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(248, 171, 126, 0.05) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.values::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.values__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.values__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.values__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--peach);
+  margin-bottom: 20px;
+}
+
+.values__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.value-card {
+  text-align: center;
+  padding: 44px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.value-card:hover {
+  border-color: rgba(248, 171, 126, 0.2);
+  transform: translateY(-4px);
+}
+
+.value-card:hover::before {
+  opacity: 1;
+}
+
+.value-card__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(248, 171, 126, 0.1);
+  color: var(--peach);
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.value-card__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.value-card__desc {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   TESTIMONIALS SECTION - With images
+   ======================================== */
+.testimonials {
+  padding: var(--section-pad) 0;
+  background: var(--light-bg);
+  position: relative;
+}
+
+.testimonials__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.testimonials__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  margin-bottom: 20px;
+}
+
+.testimonials__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  color: var(--dark-slate);
+  line-height: 1.15;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  display: grid;
+  grid-template-rows: 200px auto;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  transform: translateY(-4px);
+}
+
+.testimonial-card__image {
+  overflow: hidden;
+}
+
+.testimonial-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.testimonial-card:hover .testimonial-card__image img {
+  transform: scale(1.04);
+}
+
+.testimonial-card__body {
+  padding: 36px 32px;
+}
+
+.testimonial-card__quote-mark {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--peach-soft);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.testimonial-card__text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--dark-slate);
+  margin-bottom: 24px;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.testimonial-card:first-child .testimonial-card__avatar {
+  background: linear-gradient(135deg, var(--mauve), var(--mauve-light));
+}
+
+.testimonial-card:last-child .testimonial-card__avatar {
+  background: linear-gradient(135deg, var(--peach-deep), var(--peach));
+}
+
+.testimonial-card__name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--dark-slate);
+}
+
+.testimonial-card__location {
+  font-size: 0.8rem;
+  color: var(--medium-slate);
+  opacity: 0.7;
+}
+
+/* ========================================
+   CTA BANNER - With background image
+   ======================================== */
+.cta-banner {
+  padding: var(--section-pad) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.cta-banner__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.cta-banner__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(245, 239, 232, 0.88) 0%,
+    rgba(240, 228, 214, 0.82) 40%,
+    rgba(235, 224, 212, 0.85) 100%
+  );
+}
+
+.cta-banner__decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-banner__decor::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(174, 119, 164, 0.12);
+  animation: ctaOrb 18s linear infinite;
+}
+
+.cta-banner__decor::after {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  left: -120px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 171, 126, 0.12);
+  animation: ctaOrb 22s linear infinite reverse;
+}
+
+@keyframes ctaOrb {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cta-banner__inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.cta-banner__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--dark-slate);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.cta-banner__title em {
+  font-style: italic;
+  color: var(--mauve);
+}
+
+.cta-banner__desc {
+  font-size: 1.1rem;
+  color: var(--medium-slate);
+  margin-bottom: 40px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.cta-banner__video-placeholder {
+  margin-top: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(30, 41, 59, 0.06);
+  border: 1px dashed rgba(30, 41, 59, 0.15);
+  border-radius: 12px;
+  padding: 14px 24px;
+  max-width: 400px;
+}
+
+.cta-banner__video-placeholder svg {
+  flex-shrink: 0;
+  color: var(--mauve);
+}
+
+.cta-banner__video-placeholder span {
+  font-size: 0.72rem;
+  color: var(--medium-slate);
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: var(--dark-slate);
+  padding: 72px 0 0;
+  color: rgba(255,255,255,0.6);
+  position: relative;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer__brand-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.footer__brand-name span {
+  color: var(--mauve-light);
+}
+
+.footer__acknowledgement {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.4);
+  max-width: 380px;
+}
+
+.footer__col-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 24px;
+}
+
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__links a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s;
+}
+
+.footer__links a:hover {
+  color: var(--peach);
+}
+
+.footer__social {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.footer__social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.3s;
+}
+
+.footer__social a:hover {
+  border-color: var(--mauve-light);
+  color: var(--mauve-light);
+  transform: translateY(-2px);
+}
+
+.footer__bottom {
+  padding: 28px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .hero__split {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 140px;
+    padding-bottom: 60px;
+  }
+
+  .hero__content {
+    order: 1;
+  }
+
+  .hero__subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__buttons {
+    justify-content: center;
+  }
+
+  .hero__image-wrapper {
+    order: 2;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero__image-frame {
+    max-height: 50vh;
+  }
+
+  .hero__leaf--1 {
+    display: none;
+  }
+
+  .story__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .story__image-inset {
+    bottom: -20px;
+    right: -10px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .story__text-col {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .story__divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 240px 240px;
+  }
+
+  .gallery__item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+  .gallery__item:nth-child(2) { grid-column: 1 / 2; grid-row: 2; }
+  .gallery__item:nth-child(3) { grid-column: 2 / 3; grid-row: 2; }
+  .gallery__item:nth-child(4) { grid-column: 1 / 2; grid-row: 3; }
+  .gallery__item:nth-child(5) { grid-column: 2 / 3; grid-row: 3; }
+
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+
+  .nav__links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(250, 247, 244, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 24px;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .hero__split {
+    padding-top: 120px;
+    gap: 32px;
+  }
+
+  .hero__image-frame {
+    border-radius: 160px 160px 24px 24px;
+  }
+
+  .products__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .values__grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.6rem, 10vw, 4rem);
+  }
+
+  .product-card__visual {
+    height: 300px;
+  }
+
+  .story__image-main img {
+    height: 360px;
+  }
+
+  .gallery__mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 200px);
+  }
+
+  .gallery__item:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .gallery__item:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .gallery__item:nth-child(3) { grid-column: 1; grid-row: 3; }
+  .gallery__item:nth-child(4) { grid-column: 1; grid-row: 4; }
+  .gallery__item:nth-child(5) { grid-column: 1; grid-row: 5; }
+
+  .immersive {
+    height: 350px;
+  }
+
+  .video-placeholder {
+    position: static;
+    margin: 16px auto 0;
+    max-width: 280px;
+  }
+
+  .immersive__content {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 280px;
+  }
+
+  .hero__image-ring,
+  .hero__image-ring--2 {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Floating botanical elements (background) -->
+<div class="botanical-float" aria-hidden="true">&#x1F33F;</div>
+<div class="botanical-float" aria-hidden="true">&#x2618;</div>
+<div class="botanical-float" aria-hidden="true">&#x1F343;</div>
+
+<!-- ==========================================
+     NAVIGATION
+     ========================================== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">Yuvo <span>Naturals</span></a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#products">Range</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#values">Values</a></li>
+      <li><a href="#" class="nav__cta">Shop Now</a></li>
+    </ul>
+    <div class="nav__hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ==========================================
+     HERO - Split layout with product image
+     ========================================== -->
+<section class="hero" id="hero">
+  <div class="hero__botanical-bg"></div>
+
+  <!-- SVG Botanical leaves -->
+  <svg class="hero__leaf hero__leaf--1" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="--leaf-rotate: -15deg;">
+    <path d="M60 10 C30 50, 10 100, 40 180 C50 140, 55 100, 60 10Z" stroke="#8a9a7b" stroke-width="0.8" fill="rgba(138,154,123,0.05)"/>
+    <path d="M60 10 C90 50, 110 100, 80 180 C70 140, 65 100, 60 10Z" stroke="#8a9a7b" stroke-width="0.8" fill="rgba(138,154,123,0.03)"/>
+    <path d="M60 10 L60 180" stroke="#8a9a7b" stroke-width="0.5" opacity="0.5"/>
+    <path d="M60 40 C45 55, 35 70, 42 90" stroke="#8a9a7b" stroke-width="0.4" opacity="0.4"/>
+    <path d="M60 60 C75 75, 85 90, 78 110" stroke="#8a9a7b" stroke-width="0.4" opacity="0.4"/>
+    <path d="M60 80 C48 92, 40 105, 48 125" stroke="#8a9a7b" stroke-width="0.4" opacity="0.4"/>
+    <path d="M60 100 C72 112, 80 125, 72 145" stroke="#8a9a7b" stroke-width="0.4" opacity="0.4"/>
+  </svg>
+
+  <svg class="hero__leaf hero__leaf--2" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="--leaf-rotate: 10deg;">
+    <path d="M60 10 C25 60, 15 120, 50 190 C55 130, 58 80, 60 10Z" stroke="#ae77a4" stroke-width="0.8" fill="rgba(174,119,164,0.03)"/>
+    <path d="M60 10 C95 60, 105 120, 70 190 C65 130, 62 80, 60 10Z" stroke="#ae77a4" stroke-width="0.8" fill="rgba(174,119,164,0.02)"/>
+    <path d="M60 10 L60 190" stroke="#ae77a4" stroke-width="0.5" opacity="0.4"/>
+  </svg>
+
+  <svg class="hero__leaf hero__leaf--3" viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="--leaf-rotate: -30deg;">
+    <ellipse cx="50" cy="80" rx="35" ry="65" stroke="#8a9a7b" stroke-width="0.7" fill="rgba(138,154,123,0.03)" transform="rotate(-5 50 80)"/>
+    <path d="M50 15 L50 145" stroke="#8a9a7b" stroke-width="0.4" opacity="0.4"/>
+    <path d="M50 35 C38 45, 30 60, 35 75" stroke="#8a9a7b" stroke-width="0.3" opacity="0.3"/>
+    <path d="M50 55 C62 65, 70 80, 65 95" stroke="#8a9a7b" stroke-width="0.3" opacity="0.3"/>
+  </svg>
+
+  <!-- Particles -->
+  <div class="hero__particles" id="heroParticles"></div>
+
+  <div class="hero__split">
+    <div class="hero__content">
+      <div class="hero__badge">Melbourne Crafted</div>
+      <h1 class="hero__title"><em>Vitality</em> in Every Drop</h1>
+      <p class="hero__subtitle">Clean-label herbal sparkling water. No sugar. No preservatives. Made in Melbourne.</p>
+      <div class="hero__buttons">
+        <a href="#products" class="btn btn--primary btn--large">Explore Our Range</a>
+        <a href="#" class="btn btn--secondary btn--large">Find Yuvo Near You</a>
+      </div>
+    </div>
+
+    <div class="hero__image-wrapper">
+      <div class="hero__image-frame">
+        <img src="assets/product/yuvo-asset-product-01.png" alt="Three Yuvo Naturals bottles arranged on linen cloth surrounded by fresh botanicals">
+      </div>
+      <div class="hero__image-ring" aria-hidden="true"></div>
+      <div class="hero__image-ring hero__image-ring--2" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ==========================================
+     BRAND STORY - Side by side with image
+     ========================================== -->
+<section class="story" id="story">
+  <div class="story__grid">
+    <div class="story__image-col reveal-left">
+      <div class="story__image-main">
+        <img src="assets/emotion/yuvo-asset-emotion-01.png" loading="lazy" alt="Soft morning light streaming through linen curtains with wildflowers in a vase">
+      </div>
+      <div class="story__image-inset">
+        <img src="assets/closeup/yuvo-asset-closeup-03.png" loading="lazy" alt="Fresh botanical ingredients arranged on natural linen fabric">
+      </div>
+    </div>
+
+    <div class="story__text-col">
+      <div class="story__divider reveal"></div>
+      <p class="story__label reveal stagger-1">Our Story</p>
+      <h2 class="story__title reveal stagger-2">Nature, Refined</h2>
+      <div class="story__body">
+        <p class="reveal stagger-3">Born in Melbourne, Yuvo Naturals crafts sparkling hydration infused with purposeful herbal extracts. Every bottle is a clean-label promise - no sugar, no preservatives, no compromise. Just pure vitality from nature's finest botanicals.</p>
+        <p class="reveal stagger-4">We believe hydration should do more than quench. Each blend is designed to nourish, refresh, and restore - drawing on centuries of herbal wisdom, bottled for modern life.</p>
+      </div>
+      <div class="story__ornament reveal stagger-5">
+        <div class="story__ornament-line"></div>
+        <svg class="story__ornament-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2C8 6 4 10 4 14c0 4.4 3.6 8 8 8s8-3.6 8-8c0-4-4-8-8-12z"/>
+          <path d="M12 22V10" opacity="0.5"/>
+        </svg>
+        <div class="story__ornament-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     IMMERSIVE IMAGE STRIP
+     ========================================== -->
+<section class="immersive">
+  <div class="immersive__bg">
+    <img src="assets/dynamic/yuvo-asset-dynamic-01.png" loading="lazy" alt="Yuvo sparkling water being poured into a crystal tumbler, catching the light">
+  </div>
+  <div class="immersive__overlay"></div>
+  <div class="immersive__content">
+    <p class="immersive__quote reveal">"Hydration should feel like a ritual, not a routine."</p>
+    <span class="immersive__credit reveal stagger-1">The Yuvo Philosophy</span>
+  </div>
+  <div class="video-placeholder reveal stagger-2">
+    <div class="video-placeholder__icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+    </div>
+    <span class="video-placeholder__text">VIDEO: Slow-motion pour of Yuvo sparkling water into a crystal tumbler, bubbles catching light, botanical garnish dropping in</span>
+  </div>
+</section>
+
+<!-- ==========================================
+     PRODUCTS - With real product images
+     ========================================== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="products__header">
+      <p class="products__label reveal">The Collection</p>
+      <h2 class="products__title reveal stagger-1">Purposeful Blends</h2>
+    </div>
+
+    <div class="products__grid">
+      <!-- CALM -->
+      <div class="product-card product-card--calm reveal stagger-2">
+        <div class="product-card__visual">
+          <img src="assets/product/yuvo-asset-product-02.png" loading="lazy" alt="Yuvo Calm bottle resting on terrazzo surface with fresh rosemary sprigs">
+        </div>
+        <div class="product-card__content">
+          <h3 class="product-card__name">Yuvo Calm</h3>
+          <p class="product-card__blend">Chamomile & Lavender</p>
+          <p class="product-card__desc">A gentle blend to ease your mind. Sparkling calm in every sip.</p>
+          <a href="#" class="product-card__link">
+            Discover
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ENERGY -->
+      <div class="product-card product-card--energy reveal stagger-3">
+        <div class="product-card__visual">
+          <img src="assets/product/yuvo-asset-product-04.png" loading="lazy" alt="Yuvo Energy bottle on wet stone surface surrounded by fresh eucalyptus leaves">
+        </div>
+        <div class="product-card__content">
+          <h3 class="product-card__name">Yuvo Energy</h3>
+          <p class="product-card__blend">Ginger & Lemongrass</p>
+          <p class="product-card__desc">A natural lift without the crash. Zesty, bright, alive.</p>
+          <a href="#" class="product-card__link">
+            Discover
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- GLOW -->
+      <div class="product-card product-card--glow reveal stagger-4">
+        <div class="product-card__visual">
+          <img src="assets/dynamic/yuvo-asset-dynamic-03.png" loading="lazy" alt="Vibrant mint and cucumber splash burst with Yuvo Glow bottle">
+        </div>
+        <div class="product-card__content">
+          <h3 class="product-card__name">Yuvo Glow</h3>
+          <p class="product-card__blend">Rosehip & Hibiscus</p>
+          <p class="product-card__desc">Radiance from within. Floral, vibrant, beautiful.</p>
+          <a href="#" class="product-card__link">
+            Discover
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     LIFESTYLE GALLERY - Mosaic
+     ========================================== -->
+<section class="gallery">
+  <div class="gallery__header container">
+    <p class="gallery__label reveal">The Yuvo Life</p>
+    <h2 class="gallery__title reveal stagger-1">Moments Worth Savouring</h2>
+  </div>
+
+  <div class="gallery__mosaic">
+    <div class="gallery__item reveal-scale stagger-1">
+      <img src="assets/lifestyle/yuvo-asset-lifestyle-01.png" loading="lazy" alt="Sunlit brunch table with Yuvo Naturals bottles and fresh food">
+    </div>
+    <div class="gallery__item reveal-scale stagger-2">
+      <img src="assets/lifestyle/yuvo-asset-lifestyle-02.png" loading="lazy" alt="Sunny afternoon picnic on grass with Yuvo bottles">
+    </div>
+    <div class="gallery__item reveal-scale stagger-3">
+      <img src="assets/closeup/yuvo-asset-closeup-01.png" loading="lazy" alt="Macro shot of condensation droplets beading on a chilled Yuvo bottle">
+    </div>
+    <div class="gallery__item reveal-scale stagger-4">
+      <img src="assets/closeup/yuvo-asset-closeup-02.png" loading="lazy" alt="Delicate bubbles rising through sparkling water in a clear glass">
+    </div>
+    <div class="gallery__item reveal-scale stagger-5">
+      <img src="assets/lifestyle/yuvo-asset-lifestyle-03.png" loading="lazy" alt="Peaceful moment reading by a window with a Yuvo bottle nearby">
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     VALUES - With background image
+     ========================================== -->
+<section class="values" id="values">
+  <div class="values__bg-image" aria-hidden="true">
+    <img src="assets/emotion/yuvo-asset-emotion-03.png" loading="lazy" alt="">
+  </div>
+  <div class="container values__inner">
+    <div class="values__header">
+      <p class="values__label reveal">What We Stand For</p>
+      <h2 class="values__title reveal stagger-1">The Yuvo Promise</h2>
+    </div>
+
+    <div class="values__grid">
+      <div class="value-card reveal stagger-2">
+        <div class="value-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 12l3 3 5-5" opacity="0.8"/>
+          </svg>
+        </div>
+        <h3 class="value-card__title">Zero Sugar</h3>
+        <p class="value-card__desc">Pure taste, nothing artificial</p>
+      </div>
+
+      <div class="value-card reveal stagger-3">
+        <div class="value-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/>
+            <path d="M12 6v6l4 2" opacity="0.8"/>
+          </svg>
+        </div>
+        <h3 class="value-card__title">No Preservatives</h3>
+        <p class="value-card__desc">Clean label you can trust</p>
+      </div>
+
+      <div class="value-card reveal stagger-4">
+        <div class="value-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L8 8H2l5 4-2 6 7-4 7 4-2-6 5-4h-6z"/>
+          </svg>
+        </div>
+        <h3 class="value-card__title">Herbal Extracts</h3>
+        <p class="value-card__desc">Purposeful botanicals in every blend</p>
+      </div>
+
+      <div class="value-card reveal stagger-5">
+        <div class="value-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3" opacity="0.8"/>
+          </svg>
+        </div>
+        <h3 class="value-card__title">Melbourne Made</h3>
+        <p class="value-card__desc">Crafted locally with care</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     TESTIMONIALS - With lifestyle images
+     ========================================== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials__header">
+      <p class="testimonials__label reveal">Kind Words</p>
+      <h2 class="testimonials__title reveal stagger-1">What People Are Saying</h2>
+    </div>
+
+    <div class="testimonials__grid">
+      <div class="testimonial-card reveal-left stagger-2">
+        <div class="testimonial-card__image">
+          <img src="assets/lifestyle/yuvo-asset-lifestyle-03.png" loading="lazy" alt="Person relaxing by a window with a book and Yuvo sparkling water">
+        </div>
+        <div class="testimonial-card__body">
+          <div class="testimonial-card__quote-mark">"</div>
+          <p class="testimonial-card__text">I switched from sugary drinks to Yuvo three months ago and I'll never go back. The Calm blend is my evening ritual now.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">SM</div>
+            <div>
+              <div class="testimonial-card__name">Sarah M.</div>
+              <div class="testimonial-card__location">Melbourne</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal-right stagger-3">
+        <div class="testimonial-card__image">
+          <img src="assets/lifestyle/yuvo-asset-lifestyle-04.png" loading="lazy" alt="Friends enjoying Yuvo Naturals at a sunlit garden party">
+        </div>
+        <div class="testimonial-card__body">
+          <div class="testimonial-card__quote-mark">"</div>
+          <p class="testimonial-card__text">Finally a sparkling water that actually tastes like something. The Ginger & Lemongrass is incredible.</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">JK</div>
+            <div>
+              <div class="testimonial-card__name">James K.</div>
+              <div class="testimonial-card__location">Sydney</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     CTA BANNER - With background image
+     ========================================== -->
+<section class="cta-banner" id="cta">
+  <div class="cta-banner__bg">
+    <img src="assets/dynamic/yuvo-asset-dynamic-04.png" loading="lazy" alt="Yuvo bottle being uncapped with a gentle mist rising from the opening">
+    <div class="cta-banner__bg-overlay"></div>
+  </div>
+  <div class="cta-banner__decor"></div>
+  <div class="container cta-banner__inner">
+    <h2 class="cta-banner__title reveal">Ready to Feel the <em>Difference</em>?</h2>
+    <p class="cta-banner__desc reveal stagger-1">Try Yuvo Naturals today. Your body will thank you.</p>
+    <div class="reveal stagger-2">
+      <a href="#" class="btn btn--primary btn--large">Shop Now</a>
+    </div>
+    <div class="cta-banner__video-placeholder reveal stagger-3">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      <span>VIDEO: Time-lapse of morning light moving across a table with Yuvo bottles, botanicals slowly unfurling</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     FOOTER
+     ========================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="reveal">
+        <div class="footer__brand-name">Yuvo <span>Naturals</span></div>
+        <p class="footer__acknowledgement">Yuvo Naturals acknowledges the Traditional Custodians of Country throughout Australia and their connections to land, sea and community.</p>
+      </div>
+
+      <div class="reveal stagger-1">
+        <p class="footer__col-title">Explore</p>
+        <ul class="footer__links">
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Stockists</a></li>
+        </ul>
+      </div>
+
+      <div class="reveal stagger-2">
+        <p class="footer__col-title">Connect</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal stagger-3">
+        <p class="footer__col-title">Legal</p>
+        <ul class="footer__links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      &copy; 2026 Yuvo Naturals. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // ==========================================
+  // INTERSECTION OBSERVER - Scroll Reveals
+  // ==========================================
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // ==========================================
+  // NAVIGATION - Scroll behavior
+  // ==========================================
+  const nav = document.getElementById('nav');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+
+  // ==========================================
+  // HERO PARTICLES
+  // ==========================================
+  const particlesContainer = document.getElementById('heroParticles');
+  const particleCount = 20;
+  const colors = ['particle--peach', 'particle--mauve', 'particle--sage'];
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle', colors[i % 3]);
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.width = (Math.random() * 4 + 2) + 'px';
+    particle.style.height = particle.style.width;
+    particle.style.animationDelay = (Math.random() * -8) + 's';
+    particle.style.animationDuration = (Math.random() * 6 + 5) + 's';
+    particlesContainer.appendChild(particle);
+  }
+
+  const particleKeyframes = `
+    @keyframes particleFloat {
+      0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
+      20% { opacity: 0.4; }
+      50% { opacity: 0.6; transform: translateY(-60px) scale(1); }
+      80% { opacity: 0.3; }
+    }
+  `;
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = particleKeyframes;
+  document.head.appendChild(styleSheet);
+
+  // ==========================================
+  // PARALLAX on scroll
+  // ==========================================
+  const heroLeaves = document.querySelectorAll('.hero__leaf');
+  const botanicalFloats = document.querySelectorAll('.botanical-float');
+  const immersiveBg = document.querySelector('.immersive__bg img');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+
+    // Parallax hero leaves
+    heroLeaves.forEach((leaf, i) => {
+      const speed = 0.08 + (i * 0.03);
+      leaf.style.transform = `translateY(${scrollY * speed}px) rotate(${parseFloat(getComputedStyle(leaf).getPropertyValue('--leaf-rotate')) || 0}deg)`;
+    });
+
+    // Parallax floating botanicals
+    botanicalFloats.forEach((el, i) => {
+      const speed = 0.02 + (i * 0.015);
+      el.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+
+    // Parallax immersive background
+    if (immersiveBg) {
+      const immersiveSection = immersiveBg.closest('.immersive');
+      const rect = immersiveSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        immersiveBg.style.transform = `translateY(${(progress - 0.5) * 60}px)`;
+      }
+    }
+  }, { passive: true });
+
+  // ==========================================
+  // SMOOTH SCROLL for anchor links
+  // ==========================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        document.getElementById('navLinks').classList.remove('open');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ==========================================
+  // PRODUCT CARD - Tilt effect on hover
+  // ==========================================
+  const productCards = document.querySelectorAll('.product-card');
+
+  productCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 30;
+      const rotateY = (centerX - x) / 30;
+
+      card.style.transform = `translateY(-12px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  // ==========================================
+  // GALLERY ITEMS - Subtle parallax on scroll
+  // ==========================================
+  const galleryItems = document.querySelectorAll('.gallery__item img');
+
+  window.addEventListener('scroll', () => {
+    galleryItems.forEach(img => {
+      const rect = img.parentElement.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        img.style.transform = `scale(1.05) translateY(${(progress - 0.5) * -15}px)`;
+      }
+    });
+  }, { passive: true });
+
+})();
+</script>
+</body>
+</html>

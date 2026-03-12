@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuvo Naturals - What If Your Water Could Actually Do Something?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   YUVO NATURALS - EDITORIAL CONVERSION LP v5
+   Aesthetic: Vogue meets DTC. Magazine
+   feature that sells. Film camera warmth.
+   Now with real photography throughout.
+   ======================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --peach: #f8ab7e;
+  --peach-light: #fcd4b8;
+  --peach-glow: rgba(248, 171, 126, 0.12);
+  --peach-deep: #e8946a;
+  --mauve: #ae77a4;
+  --mauve-light: #cb8dc1;
+  --mauve-glow: rgba(174, 119, 164, 0.10);
+  --dark-slate: #1e293b;
+  --medium-slate: #334155;
+  --light-bg: #F0F5FA;
+  --white: #FFFFFF;
+  --cream: #faf8f5;
+  --warm-cream: #f5efe8;
+  --warm-gray: #6b7280;
+  --light-gray: #e5e7eb;
+  --text-body: #475569;
+  --text-muted: #94a3b8;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, sans-serif;
+
+  --section-pad: clamp(80px, 12vw, 160px);
+  --content-width: 720px;
+  --wide-width: 1080px;
+  --full-width: 1320px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--dark-slate);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 17px;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--peach);
+  color: var(--white);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Image reveal - scale in */
+.reveal-image {
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-image.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ========================================
+   STICKY CTA
+   ======================================== */
+.sticky-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sticky-cta.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.sticky-cta a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--dark-slate);
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  border-radius: 100px;
+  box-shadow: 0 8px 32px rgba(30, 41, 59, 0.25), 0 2px 8px rgba(30, 41, 59, 0.1);
+  transition: all 0.3s ease;
+}
+.sticky-cta a:hover {
+  background: var(--medium-slate);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(30, 41, 59, 0.3), 0 4px 12px rgba(30, 41, 59, 0.15);
+}
+.sticky-cta a .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--peach);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+/* ========================================
+   SECTION 1: HERO - SPLIT EDITORIAL
+   ======================================== */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 100px) clamp(32px, 5vw, 80px);
+  position: relative;
+  z-index: 2;
+}
+
+/* Film grain on hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeInUp 1s 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.1;
+  color: var(--dark-slate);
+  letter-spacing: -0.02em;
+  max-width: 560px;
+  opacity: 0;
+  animation: fadeInUp 1.2s 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--peach);
+  font-weight: 300;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--text-body);
+  margin-top: 28px;
+  max-width: 420px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeInUp 1s 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-image-side {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  animation: heroImageReveal 1.8s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes heroImageReveal {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Peach gradient bleed from image to copy side */
+.hero-image-side::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(to right, var(--cream) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.scroll-indicator {
+  margin-top: 48px;
+  opacity: 0;
+  animation: fadeInUp 1s 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scroll-indicator a {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--warm-gray);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.3s;
+}
+.scroll-indicator a:hover {
+  color: var(--peach);
+}
+
+.scroll-line {
+  width: 40px;
+  height: 1px;
+  background: var(--warm-gray);
+  position: relative;
+  overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--peach);
+  animation: scrollRight 2s infinite;
+}
+
+@keyframes scrollRight {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   FULL-WIDTH IMAGE BREAK
+   ======================================== */
+.image-break {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-break img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.image-break-tall {
+  height: clamp(300px, 50vw, 560px);
+}
+
+.image-break-tall img {
+  height: 100%;
+}
+
+.image-break-short {
+  height: clamp(200px, 30vw, 360px);
+}
+
+.image-break-short img {
+  height: 100%;
+}
+
+/* Video placeholder styling */
+.video-placeholder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-slate);
+  color: rgba(255,255,255,0.4);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+.video-placeholder::before {
+  content: '';
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+}
+
+.video-placeholder::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid rgba(255,255,255,0.3);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 4px;
+}
+
+.video-placeholder .video-label {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Image placeholder for missing shots */
+.image-placeholder {
+  background: linear-gradient(135deg, var(--warm-cream) 0%, #ede5db 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  padding: 24px;
+  border: 1px dashed rgba(148, 163, 184, 0.3);
+}
+
+/* ========================================
+   SECTION 2: EDITORIAL OPENING
+   ======================================== */
+.editorial-opening {
+  padding: var(--section-pad) 24px;
+  background: var(--white);
+}
+
+.editorial-opening .inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: clamp(48px, 6vw, 100px);
+  align-items: start;
+}
+
+.editorial-opening .copy-column {
+  max-width: var(--content-width);
+}
+
+.editorial-opening .lede {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(22px, 3.2vw, 32px);
+  line-height: 1.45;
+  color: var(--dark-slate);
+  margin-bottom: 48px;
+  letter-spacing: -0.01em;
+}
+
+.editorial-opening .lede .highlight {
+  color: var(--peach);
+  font-weight: 500;
+}
+
+.editorial-opening .body-text {
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--text-body);
+  margin-bottom: 28px;
+}
+
+.editorial-opening .body-text:last-child {
+  margin-bottom: 0;
+}
+
+.editorial-opening .lede::first-letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.8em;
+  float: left;
+  line-height: 0.85;
+  margin-right: 12px;
+  margin-top: 6px;
+  color: var(--peach);
+}
+
+.editorial-sidebar-image {
+  position: sticky;
+  top: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(30, 41, 59, 0.08);
+}
+
+.editorial-sidebar-image img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--light-gray);
+  margin: 0 auto;
+}
+
+/* ========================================
+   SECTION 3: THE NUMBERS
+   ======================================== */
+.numbers-section {
+  padding: var(--section-pad) 24px;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-slate);
+}
+
+.numbers-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.numbers-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.08;
+  filter: grayscale(50%);
+}
+
+/* Texture overlay */
+.numbers-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.numbers-section .inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.numbers-section .section-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--peach);
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
+
+.number-item {
+  text-align: center;
+}
+
+.number-item .big-number {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.number-item .big-number .unit {
+  font-size: 0.5em;
+  font-weight: 400;
+  color: var(--peach);
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.number-item .number-label {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.numbers-cta {
+  text-align: center;
+  margin-top: 72px;
+}
+
+.numbers-cta a {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--peach);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(248,171,126,0.3);
+  padding-bottom: 4px;
+  transition: all 0.3s;
+}
+.numbers-cta a:hover {
+  border-bottom-color: var(--peach);
+}
+
+/* ========================================
+   SECTION 4: THE THREE BLENDS
+   ======================================== */
+.blends-section {
+  padding: var(--section-pad) 24px;
+  background: var(--white);
+}
+
+.blends-section .inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+}
+
+.blend-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+  padding: clamp(60px, 8vw, 100px) 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.blend-item:last-child {
+  border-bottom: none;
+}
+
+.blend-item:nth-child(even) {
+  direction: rtl;
+}
+.blend-item:nth-child(even) > * {
+  direction: ltr;
+}
+
+.blend-visual {
+  aspect-ratio: 4/5;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blend-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blend-visual:hover img {
+  transform: scale(1.04);
+}
+
+/* Subtle gradient overlays per blend */
+.blend-visual-calm::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(174, 119, 164, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.blend-visual-energy::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(248, 171, 126, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+  border-radius: 16px;
+}
+.blend-visual-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(216, 144, 168, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.blend-visual .blend-label-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.7;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.blend-copy .blend-occasion {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(11px, 1.5vw, 13px);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  margin-bottom: 16px;
+}
+
+.blend-copy .blend-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: var(--dark-slate);
+  line-height: 1.15;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.blend-copy .blend-ingredients {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--peach);
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+
+.blend-copy .blend-story {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-body);
+  margin-bottom: 32px;
+}
+
+.blend-cta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--dark-slate);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+.blend-cta:hover {
+  color: var(--peach);
+  gap: 14px;
+}
+.blend-cta .arrow {
+  transition: transform 0.3s;
+  font-size: 18px;
+}
+.blend-cta:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   SECTION 5: PULL QUOTE / TESTIMONIAL
+   ======================================== */
+.pullquote-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pullquote-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pullquote-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark wash overlay */
+.pullquote-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(30, 41, 59, 0.82) 0%,
+    rgba(30, 41, 59, 0.65) 50%,
+    rgba(30, 41, 59, 0.78) 100%
+  );
+}
+
+.pullquote-section .inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad) 24px;
+}
+
+.pullquote-mark {
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--peach);
+  opacity: 0.25;
+  line-height: 0.5;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+.pullquote-text {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(24px, 3.8vw, 38px);
+  line-height: 1.5;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 36px;
+}
+
+.pullquote-text em {
+  font-style: normal;
+  color: var(--peach);
+  font-weight: 500;
+}
+
+.pullquote-attribution {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.pullquote-context {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+}
+
+/* ========================================
+   SECTION: DUAL IMAGE STRIP
+   ======================================== */
+.dual-image-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+}
+
+.dual-image-strip .strip-image {
+  height: clamp(250px, 35vw, 420px);
+  overflow: hidden;
+}
+
+.dual-image-strip .strip-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dual-image-strip .strip-image:hover img {
+  transform: scale(1.03);
+}
+
+/* ========================================
+   SECTION 6: THE COMPARISON
+   ======================================== */
+.comparison-section {
+  padding: var(--section-pad) 24px;
+  background: var(--white);
+}
+
+.comparison-section .inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+}
+
+.comparison-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.comparison-section .section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--dark-slate);
+  letter-spacing: -0.01em;
+}
+
+.comparison-accent-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(30, 41, 59, 0.08);
+}
+
+.comparison-accent-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comparison-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.comparison-card {
+  padding: clamp(32px, 4vw, 48px);
+  border-radius: 16px;
+  position: relative;
+}
+
+.comparison-card.other {
+  background: var(--light-bg);
+  border: 1px solid var(--light-gray);
+}
+
+.comparison-card.yuvo {
+  background: var(--dark-slate);
+  color: var(--white);
+}
+
+.comparison-card .card-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.comparison-card.other .card-label { color: var(--warm-gray); }
+.comparison-card.yuvo .card-label { color: var(--peach); }
+
+.comparison-stat {
+  margin-bottom: 24px;
+}
+
+.comparison-stat .stat-value {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.comparison-card.other .stat-value { color: var(--dark-slate); }
+.comparison-card.yuvo .stat-value { color: var(--white); }
+
+.comparison-stat .stat-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+}
+.comparison-card.other .stat-label { color: var(--warm-gray); }
+.comparison-card.yuvo .stat-label { color: rgba(255,255,255,0.5); }
+
+.comparison-card.yuvo .stat-value .accent {
+  color: var(--peach);
+}
+
+.comparison-closer {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--text-body);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ========================================
+   SECTION 7: CLOSING CTA
+   ======================================== */
+.closing-cta {
+  padding: var(--section-pad) 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closing-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.closing-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.closing-cta-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(250, 248, 245, 0.92) 0%,
+    rgba(250, 248, 245, 0.85) 40%,
+    rgba(250, 248, 245, 0.92) 100%
+  );
+}
+
+.closing-cta .inner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.closing-cta .cta-pretext {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(22px, 3vw, 30px);
+  color: var(--dark-slate);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.closing-cta .cta-pretext-sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 20px 52px;
+  background: var(--dark-slate);
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 24px rgba(30, 41, 59, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--peach), var(--mauve));
+  opacity: 0;
+  transition: opacity 0.4s;
+  border-radius: 100px;
+}
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 36px rgba(30, 41, 59, 0.25);
+}
+.cta-button:hover::before {
+  opacity: 1;
+}
+.cta-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.closing-cta .cta-subtext {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 24px;
+  letter-spacing: 0.01em;
+}
+
+/* ========================================
+   SECTION 8: FOOTER
+   ======================================== */
+.site-footer {
+  padding: 60px 24px 40px;
+  background: var(--dark-slate);
+  color: rgba(255,255,255,0.4);
+  font-size: 13px;
+}
+
+.site-footer .inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: var(--peach);
+}
+
+.footer-acknowledgement {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.3);
+  max-width: 600px;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-weight: 300;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-copy {
+    padding: 80px 32px 48px;
+    order: 2;
+  }
+
+  .hero-image-side {
+    order: 1;
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .hero-image-side::before {
+    display: none;
+  }
+
+  .editorial-opening .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-sidebar-image {
+    position: static;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .comparison-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .comparison-accent-image {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .numbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .blend-item {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .blend-item:nth-child(even) {
+    direction: ltr;
+  }
+
+  .blend-visual {
+    aspect-ratio: 16/10;
+  }
+
+  .comparison-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dual-image-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .dual-image-strip .strip-image {
+    height: clamp(200px, 50vw, 300px);
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sticky-cta {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+  .sticky-cta a {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .numbers-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .pullquote-mark {
+    font-size: 80px;
+  }
+
+  .hero-copy {
+    padding: 60px 20px 40px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Sticky CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#shop">
+    <span class="dot"></span>
+    Try Yuvo
+  </a>
+</div>
+
+<!-- ======== SECTION 1: HERO (Split Layout) ======== -->
+<section class="hero" id="hero">
+  <div class="hero-copy">
+    <p class="hero-label">Yuvo Naturals</p>
+    <h1>What If Your Water<br>Could Actually <em>Do Something?</em></h1>
+    <p class="hero-subtitle">Herbal sparkling water. Three purposeful blends. Zero sugar. Made in Melbourne from botanicals that have been trusted for centuries.</p>
+    <div class="scroll-indicator">
+      <a href="#opening">
+        Read the story
+        <div class="scroll-line"></div>
+      </a>
+    </div>
+  </div>
+  <div class="hero-image-side">
+    <img src="assets/product/yuvo-asset-product-01.png" alt="Three Yuvo Naturals bottles arranged on natural linen with scattered botanicals" loading="eager">
+  </div>
+</section>
+
+<!-- ======== IMAGE BREAK: Dynamic Pour ======== -->
+<div class="image-break image-break-short reveal-image">
+  <img src="assets/dynamic/yuvo-asset-dynamic-01.png" alt="Yuvo being poured into a crystal tumbler, golden liquid catching light" loading="lazy">
+</div>
+
+<!-- ======== SECTION 2: THE OPENING ======== -->
+<section class="editorial-opening" id="opening">
+  <div class="inner">
+    <div class="copy-column">
+      <p class="lede reveal">
+        Australians drink <span class="highlight">650 million litres</span> of sparkling water every year. Most of it does absolutely nothing beyond making you burp.
+      </p>
+
+      <p class="body-text reveal reveal-delay-1">
+        In a Melbourne workshop, a small team asked a dangerous question: what if we made sparkling water that was actually good for you?
+      </p>
+
+      <p class="body-text reveal reveal-delay-2">
+        Not vitamin water. Not kombucha. Not another wellness fad with 47 ingredients you can't pronounce.
+      </p>
+
+      <p class="body-text reveal reveal-delay-3">
+        Just clean sparkling water. Infused with herbal extracts that have been used for centuries. Nothing added that shouldn't be there.
+      </p>
+    </div>
+
+    <div class="editorial-sidebar-image reveal reveal-delay-2">
+      <img src="assets/closeup/yuvo-asset-closeup-03.png" alt="Botanical ingredients spread across natural linen - chamomile, lavender, rosehip, hibiscus" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ======== SECTION 3: THE NUMBERS ======== -->
+<section class="numbers-section" id="numbers">
+  <div class="numbers-bg-image">
+    <img src="assets/closeup/yuvo-asset-closeup-01.png" alt="" role="presentation" loading="lazy">
+  </div>
+  <div class="inner">
+    <p class="section-eyebrow reveal">The Facts</p>
+
+    <div class="numbers-grid">
+      <div class="number-item reveal reveal-delay-1">
+        <div class="big-number" data-target="0" data-suffix="g">0<span class="unit">g</span></div>
+        <p class="number-label">Sugar per bottle. Not "low sugar." Zero.</p>
+      </div>
+      <div class="number-item reveal reveal-delay-2">
+        <div class="big-number" data-target="0">0</div>
+        <p class="number-label">Preservatives. Clean label means clean label.</p>
+      </div>
+      <div class="number-item reveal reveal-delay-3">
+        <div class="big-number" data-target="3">3</div>
+        <p class="number-label">Purposeful blends. Each designed to do something specific.</p>
+      </div>
+      <div class="number-item reveal reveal-delay-4">
+        <div class="big-number" data-target="2000" data-suffix="+">0<span class="unit">+</span></div>
+        <p class="number-label">Australians who've already made the switch.</p>
+      </div>
+    </div>
+
+    <div class="numbers-cta reveal reveal-delay-5">
+      <a href="#blends">See what they're drinking &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== VIDEO BREAK: Production Process ======== -->
+<div class="image-break image-break-tall">
+  <div class="video-placeholder" style="height: 100%;" role="img" aria-label="VIDEO: Slow-motion sequence showing botanical ingredients being cold-infused into sparkling water. Steam rising, bubbles forming, herbs swirling. Film-graded with warm tones. 15-20 second loop, no audio needed.">
+    <span class="video-label">Video - The Making Of</span>
+  </div>
+</div>
+
+<!-- ======== SECTION 4: THE THREE BLENDS ======== -->
+<section class="blends-section" id="blends">
+  <div class="inner">
+
+    <!-- Calm -->
+    <div class="blend-item reveal">
+      <div class="blend-visual blend-visual-calm">
+        <img src="assets/emotion/yuvo-asset-emotion-01.png" alt="Soft morning light filtering through linen curtains beside a wildflower - the calm evening moment Yuvo Calm is made for" loading="lazy">
+        <span class="blend-label-overlay">Calm</span>
+      </div>
+      <div class="blend-copy">
+        <p class="blend-occasion">For the evenings</p>
+        <h2 class="blend-name">Yuvo Calm</h2>
+        <p class="blend-ingredients">Chamomile & Lavender</p>
+        <p class="blend-story">
+          There's a moment every evening when the day finally lets go. Yuvo Calm was made for that exact moment. Chamomile to quiet the mind. Lavender to ease the body. No melatonin. No supplements. Just plants doing what plants have done for thousands of years.
+        </p>
+        <a href="#shop" class="blend-cta">Try Yuvo Calm <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+
+    <!-- Energy -->
+    <div class="blend-item reveal">
+      <div class="blend-visual blend-visual-energy">
+        <img src="assets/dynamic/yuvo-asset-dynamic-03.png" alt="Explosive splash of mint and cucumber in sparkling water - the energy and vitality of Yuvo Energy captured mid-burst" loading="lazy">
+        <span class="blend-label-overlay">Energy</span>
+      </div>
+      <div class="blend-copy">
+        <p class="blend-occasion">For the 2pm wall</p>
+        <h2 class="blend-name">Yuvo Energy</h2>
+        <p class="blend-ingredients">Ginger & Lemongrass</p>
+        <p class="blend-story">
+          You know the feeling. 2pm. The screen blurs. You reach for coffee. Again. Yuvo Energy offers a different path. Ginger root for natural fire. Lemongrass for clarity. Energy that builds and sustains, without the 4pm cliff.
+        </p>
+        <a href="#shop" class="blend-cta">Try Yuvo Energy <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+
+    <!-- Glow -->
+    <div class="blend-item reveal">
+      <div class="blend-visual blend-visual-glow">
+        <img src="assets/product/yuvo-asset-product-02.png" alt="Single Yuvo Glow bottle on terrazzo surface with fresh rosemary sprigs - natural beauty in a bottle" loading="lazy">
+        <span class="blend-label-overlay">Glow</span>
+      </div>
+      <div class="blend-copy">
+        <p class="blend-occasion">For the glow</p>
+        <h2 class="blend-name">Yuvo Glow</h2>
+        <p class="blend-ingredients">Rosehip & Hibiscus</p>
+        <p class="blend-story">
+          The beauty industry sells you creams, serums, and supplements. But the oldest beauty secret is simpler: what you put inside shows up outside. Rosehip and hibiscus, rich in antioxidants, in a sparkling water you'd drink for the taste alone.
+        </p>
+        <a href="#shop" class="blend-cta">Try Yuvo Glow <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======== DUAL IMAGE STRIP ======== -->
+<div class="dual-image-strip">
+  <div class="strip-image reveal-image">
+    <img src="assets/dynamic/yuvo-asset-dynamic-04.png" alt="Yuvo bottle being uncapped with delicate mist rising from the opening" loading="lazy">
+  </div>
+  <div class="strip-image reveal-image">
+    <img src="assets/closeup/yuvo-asset-closeup-02.png" alt="Close-up of fine bubbles rising through golden liquid in a glass" loading="lazy">
+  </div>
+</div>
+
+<!-- ======== SECTION 5: PULL QUOTE ======== -->
+<section class="pullquote-section">
+  <div class="pullquote-bg">
+    <img src="assets/lifestyle/yuvo-asset-lifestyle-03.png" alt="" role="presentation" loading="lazy">
+  </div>
+  <div class="inner reveal">
+    <div class="pullquote-mark" aria-hidden="true">&ldquo;</div>
+    <p class="pullquote-text">
+      I stopped buying kombucha. I stopped buying vitamin water. I just drink <em>Yuvo</em> now. It's simpler and it's better.
+    </p>
+    <p class="pullquote-attribution">Sarah M., Melbourne</p>
+    <p class="pullquote-context">One of 2,000+ Australians who simplified their hydration.</p>
+  </div>
+</section>
+
+<!-- ======== IMAGE BREAK: Lifestyle ======== -->
+<div class="image-break image-break-short reveal-image">
+  <img src="assets/lifestyle/yuvo-asset-lifestyle-02.png" alt="Yuvo bottles at a sunny picnic on the grass - friends, sunlight, effortless hydration" loading="lazy">
+</div>
+
+<!-- ======== SECTION 6: THE COMPARISON ======== -->
+<section class="comparison-section">
+  <div class="inner">
+    <div class="comparison-header">
+      <h2 class="section-title reveal">A quick reality check.</h2>
+      <div class="comparison-accent-image reveal reveal-delay-1">
+        <img src="assets/closeup/yuvo-asset-closeup-04.png" alt="Close-up of Yuvo bottle label with water beading on the glass surface" loading="lazy">
+      </div>
+    </div>
+
+    <div class="comparison-cards">
+      <div class="comparison-card other reveal reveal-delay-1">
+        <p class="card-label">Your Average "Healthy" Drink</p>
+        <div class="comparison-stat">
+          <p class="stat-value">24g</p>
+          <p class="stat-label">of sugar per bottle</p>
+        </div>
+        <div class="comparison-stat">
+          <p class="stat-value">8</p>
+          <p class="stat-label">artificial ingredients</p>
+        </div>
+        <div class="comparison-stat">
+          <p class="stat-value">$5.50</p>
+          <p class="stat-label">per serve</p>
+        </div>
+      </div>
+
+      <div class="comparison-card yuvo reveal reveal-delay-2">
+        <p class="card-label">Yuvo Naturals</p>
+        <div class="comparison-stat">
+          <p class="stat-value"><span class="accent">0g</span></p>
+          <p class="stat-label">of sugar. Not low. Zero.</p>
+        </div>
+        <div class="comparison-stat">
+          <p class="stat-value"><span class="accent">3</span></p>
+          <p class="stat-label">herbal extracts. Clean label.</p>
+        </div>
+        <div class="comparison-stat">
+          <p class="stat-value"><span class="accent">Better value</span></p>
+          <p class="stat-label">for what actually matters</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="comparison-closer reveal">
+      Sometimes the better choice is also the simpler one.
+    </p>
+  </div>
+</section>
+
+<!-- ======== IMAGE BREAK: Overhead Product ======== -->
+<div class="image-break image-break-short reveal-image">
+  <img src="assets/product/yuvo-asset-product-03.png" alt="Two Yuvo bottles on a wooden board surrounded by fresh citrus, shot from directly above" loading="lazy">
+</div>
+
+<!-- ======== SECTION 7: CLOSING CTA ======== -->
+<section class="closing-cta" id="shop">
+  <div class="closing-cta-bg">
+    <img src="assets/lifestyle/yuvo-asset-lifestyle-04.png" alt="" role="presentation" loading="lazy">
+  </div>
+  <div class="inner">
+    <p class="cta-pretext reveal">You've read this far.</p>
+    <p class="cta-pretext-sub reveal reveal-delay-1">Most people who do, end up trying it.</p>
+    <a href="https://yuvonaturals.com.au" class="cta-button reveal reveal-delay-2"><span>Start with the Variety Pack</span></a>
+    <p class="cta-subtext reveal reveal-delay-3">Free shipping over $50 &middot; Melbourne made &middot; Satisfaction guaranteed</p>
+  </div>
+</section>
+
+<!-- ======== SECTION 8: FOOTER ======== -->
+<footer class="site-footer">
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">Yuvo Naturals</div>
+      <nav class="footer-links">
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Stockists</a>
+      </nav>
+    </div>
+
+    <p class="footer-acknowledgement">
+      Yuvo Naturals acknowledges the Traditional Custodians of the land on which we operate, the Wurundjeri Woi Wurrung people of the Kulin Nation, and pay our respects to their Elders past and present.
+    </p>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Yuvo Naturals. Vitality in Every Drop.</span>
+      <span>Melbourne, Australia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======== JAVASCRIPT ======== -->
+<script>
+(function() {
+  'use strict';
+
+  // ---- SCROLL REVEAL (IntersectionObserver) ----
+  const revealElements = document.querySelectorAll('.reveal, .reveal-image');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+
+  // ---- NUMBER COUNT-UP ANIMATION ----
+  const numberElements = document.querySelectorAll('.big-number[data-target]');
+
+  const numberObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumber(entry.target);
+        numberObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  numberElements.forEach(el => numberObserver.observe(el));
+
+  function animateNumber(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const startTime = performance.now();
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const current = Math.round(easedProgress * target);
+
+      if (target === 0) {
+        el.innerHTML = '0' + (suffix ? '<span class="unit">' + suffix + '</span>' : '');
+        return;
+      }
+
+      const formatted = current.toLocaleString();
+      el.innerHTML = formatted + (suffix ? '<span class="unit">' + suffix + '</span>' : '');
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+
+  // ---- STICKY CTA (appears after scrolling past hero) ----
+  const stickyCta = document.getElementById('stickyCta');
+  const hero = document.getElementById('hero');
+
+  const stickyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0 });
+
+  stickyObserver.observe(hero);
+
+
+  // ---- SUBTLE PARALLAX on images ----
+  const parallaxElements = document.querySelectorAll('.blend-visual img, .image-break img');
+
+  function handleParallax() {
+    parallaxElements.forEach(img => {
+      const rect = img.parentElement.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+
+      if (rect.top < viewHeight && rect.bottom > 0) {
+        const progress = (viewHeight - rect.top) / (viewHeight + rect.height);
+        const offset = (progress - 0.5) * 20;
+        img.style.transform = 'translateY(' + offset + 'px) scale(1.05)';
+      }
+    });
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        handleParallax();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+
+  // ---- SMOOTH SCROLL for anchor links ----
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
